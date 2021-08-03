@@ -1,0 +1,107 @@
+/* DESKTOP */
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    align-self: center;
+    height: 20vh;
+    width: 30vw;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+form {
+    padding-top: 15px;
+}
+
+.welcome {
+    position: absolute;
+    top: 30vh;
+}
+
+input {
+    height: 4vh;
+    width: 28vw;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.375);
+    
+}
+
+.submit-btn {
+    height: 4vh;
+    width: 28.6vw;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.375);
+    cursor: pointer;
+}
+
+div i {
+    position: absolute;
+    margin: 6px 0 0 -20px;
+}
+
+.password {
+    padding: 1vh 0;
+}
+
+.register {
+    border: 1px solid black;
+    margin: 4vh 0 0 0;
+    border-radius: 5px;
+}
+
+.register a {
+    padding: 0 0 0 .25vw;
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1200px) {
+    .main-container {
+        color: blue;
+    }
+
+    .card {
+        min-width: 400px;
+    }
+
+    form input, button {
+        min-width: 350px;
+    }
+}
+
+/* LARGE CELLPHONES */
+
+@media screen and (max-width: 600px) {
+    .main-container {
+        color: orange;
+    }
+
+    .card {
+        min-width: 300px;
+    }
+
+    form input, button {
+        min-width: 250px;
+    }
+}
+
+/* SMALL CELLPHONES */
+
+@media screen and (max-width: 425px) {
+    .main-container {
+        color: green;
+    }
+    
+    .card {
+        min-width: 265px;
+    }
+
+    form input, button {
+        min-width: 200px;
+    }
+}
