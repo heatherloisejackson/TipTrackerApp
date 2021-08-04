@@ -1,0 +1,31 @@
+/* DESKTOPS */
+
+@media screen and (min-width: 1200px) {
+    .graph {
+        color: black;
+    }
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1200px) {
+    .graph {
+        color: blue;
+    }
+}
+
+/* LARGE CELLPHONES */
+
+@media screen and (max-width: 600px) {
+    .graph {
+        color: orange;
+    }
+}
+
+/* SMALL CELLPHONES */
+
+@media screen and (max-width: 465px) {
+    .graph {
+        color: green;
+    }
+}

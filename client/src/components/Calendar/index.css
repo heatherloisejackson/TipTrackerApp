@@ -1,0 +1,35 @@
+.calendar {
+
+}
+
+/* DESKTOPS */
+
+@media screen and (min-width: 1200px) {
+    .calendar {
+        color: black;
+    }
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1200px) {
+    .calendar {
+        color: blue;
+    }
+}
+
+/* LARGE CELLPHONES */
+
+@media screen and (max-width: 600px) {
+    .calendar {
+        color: orange;
+    }
+}
+
+/* SMALL CELLPHONES */
+
+@media screen and (max-width: 465px) {
+    .calendar {
+        color: green;
+    }
+}

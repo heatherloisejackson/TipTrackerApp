@@ -1,0 +1,32 @@
+
+/* DESKTOPS */
+
+@media screen and (min-width: 1200px) {
+    .settings {
+        color: black;
+    }
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1200px) {
+    .settings {
+        color: blue;
+    }
+}
+
+/* LARGE CELLPHONES */
+
+@media screen and (max-width: 600px) {
+    .settings {
+        color: orange;
+    }
+}
+
+/* SMALL CELLPHONES */
+
+@media screen and (max-width: 465px) {
+    .settings {
+        color: green;
+    }
+}
