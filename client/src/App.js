@@ -3,8 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Register from './components/Register';
 
+
+// import NavFooter from './components/Dashboard'
+
 function App() {
   return (
+    <div>
     <Router>
     <div className="App">
       <Switch>
@@ -15,8 +19,11 @@ function App() {
           <Register />
         </Route>
       </Switch>
+      {/* <NavFooter/> */}
     </div>
     </Router>
+    
+    </div>
   );
 }
 
