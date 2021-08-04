@@ -1,0 +1,41 @@
+/* GENERAL */
+
+.dashboard {
+    overflow: hidden;
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1200px) {
+    .dashboard {
+        color: black;
+    }
+
+    .dashboard h2 {
+        margin-top: 5vh;
+    }
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1200px) {
+    .dashboard {
+        color: blue;
+    }
+}
+
+/* LARGE CELLPHONES */
+
+@media screen and (max-width: 600px) {
+    .dashboard {
+        color: orange;
+    }
+}
+
+/* SMALL CELLPHONES */
+
+@media screen and (max-width: 425px) {
+    .dashboard {
+        color: green;
+    }
+}

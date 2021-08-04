@@ -1,0 +1,30 @@
+/* DESKTOP */
+
+@media screen and (min-width: 1200px) {
+    .news {
+        color: black;
+    }
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1200px) {
+    .news {
+        color: blue;
+    }
+}
+
+/* LARGE CELLPHONES */
+@media screen and (max-width: 600px) {
+    .news {
+        color: orange;
+    }
+}
+
+/* SMALL CELLPHONES */
+
+@media screen and (max-width: 465px) {
+    .news {
+        color: green;
+    }
+}

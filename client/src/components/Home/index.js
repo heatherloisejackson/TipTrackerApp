@@ -21,7 +21,9 @@ const Home = () => {
                     </div>
                     
                     <button type='submit' className='submit-btn'>
-                        Sign in
+                        <Link to='/dashboard'>
+                            Sign in
+                        </Link>
                     </button>
                 </form>
                 <div className="register">
