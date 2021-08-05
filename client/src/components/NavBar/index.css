@@ -12,7 +12,7 @@ nav a:hover {
     nav {
         display: flex;
         justify-content: space-evenly;
-        position: absolute;
+        position: absolute; 
         width: 100vw;
         top: 2vh;
     }
@@ -25,6 +25,7 @@ nav a:hover {
         position: fixed;
         width: 100vw;
         bottom: 2vh;
+        font-size: 2vh;
     }
 }
 
@@ -34,7 +35,7 @@ nav a:hover {
         justify-content: space-evenly;
         position: fixed;
         width: 100vw;
-        bottom: 2vh;
+        bottom: 1vh;
     }
 }
 
