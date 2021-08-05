@@ -4,14 +4,21 @@
     display: flex;
     justify-content: center;
     height: 100vh;
+    background-color: rgb(247,247,247);
 }
 
 .card {
+    background-color: white;
     align-self: center;
     height: 20vh;
     width: 30vw;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.313);
     border-radius: 5px;
+    box-shadow: 0 1px 5px gray;
+}
+
+.welcome h2 {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.354);
 }
 
 form {
@@ -27,21 +34,26 @@ input {
     height: 4vh;
     width: 28vw;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.375);
-    
+    border: 1px solid rgba(0, 0, 0, 0.313);
+ }
+
+input:focus {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.514);
 }
 
 .submit-btn {
-    height: 4vh;
+    height: 5vh;
     width: 28.6vw;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.375);
+    border: 1px solid rgba(0, 0, 0, 0.313);
     cursor: pointer;
 }
 
 div i {
     position: absolute;
     margin: 6px 0 0 -25px;
+    color: rgb(108, 108, 108);
 }
 
 .password {
@@ -49,9 +61,11 @@ div i {
 }
 
 .register {
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.313);
     margin: 4vh 0 0 0;
     border-radius: 5px;
+    box-shadow: 0 1px 5px gray;
+
 }
 
 .register a {
