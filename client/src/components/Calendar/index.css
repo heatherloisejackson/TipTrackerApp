@@ -1,5 +1,23 @@
-.calendar {
+.calendar-container {
+    padding-top: 5vh;
+}
 
+
+.react-calendar {
+    font-size: 1rem;
+    background-color: white;
+    margin: 0 auto;
+    width: 75vw;
+    top: 5vh;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.154),
+        0px 3px 8px rgba(0, 0, 0, 0.254),
+        0px 3px 15px rgba(0, 0, 0, 0.254),
+        0px 5px 35px rgba(0, 0, 0, 0.374);
+}
+
+.react-calendar__month-view__days {
+    font-size: 1rem;
+    height: 70vh;
 }
 
 /* DESKTOPS */
@@ -13,23 +31,65 @@
 /* TABLETS */
 
 @media screen and (max-width: 1200px) {
+    .calendar-container {
+        padding-top: 0;
+    }
+    
     .calendar {
         color: blue;
+    }
+
+    .react-calendar {
+        padding-top: 2vh;
+        width: 100vw;
+        font-size: 2.5vh;
+    }
+
+    .react-calendar__month-view__days {
+        flex-wrap: wrap;
+        height: 75vh;
+    }
+    form input, button {
+        min-width: 20px;
+        font-size: 2vh;
     }
 }
 
 /* LARGE CELLPHONES */
 
 @media screen and (max-width: 600px) {
+    .calendar-container {
+        padding-top: 0;
+    }
+
     .calendar {
         color: orange;
+        top: 3vh;
+    }
+
+    form, input button {
+        min-width: 20px;
     }
 }
 
 /* SMALL CELLPHONES */
 
 @media screen and (max-width: 465px) {
+    .calendar-container {
+        padding-top: 0;
+    }
+
     .calendar {
         color: green;
+    }
+
+    .react-calendar {
+        height: 85vh;
+        width: 100vw;
+    }
+
+    form input, button {
+        min-width: 20px;
+        height: 8vh;
     }
 }

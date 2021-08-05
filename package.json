@@ -17,5 +17,8 @@
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "react-calendar": "^3.4.0"
   }
 }
