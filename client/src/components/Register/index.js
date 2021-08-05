@@ -21,7 +21,7 @@ const Register = () => {
                     </div>
                     
                     <button type='submit' className='submit-btn'>
-                        <Link to='/dashboard'>
+                        <Link to='/mytips'>
                             Register
                         </Link>
                         

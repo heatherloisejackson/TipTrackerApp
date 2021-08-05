@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div className='main-container'>
             <div className="welcome">
-                <h2>Welcome</h2>
+                <h2>Log-in to your Account</h2>
             </div>
             <main className="card">
 
@@ -21,7 +21,7 @@ const Home = () => {
                     </div>
                     
                     <button type='submit' className='submit-btn'>
-                        <Link to='/dashboard'>
+                        <Link to='/mytips'>
                             Sign in
                         </Link>
                     </button>
