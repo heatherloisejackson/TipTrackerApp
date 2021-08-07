@@ -7,9 +7,18 @@ import Graph from './components/Graph';
 import GetNews from './components/News';
 import Settings from './components/Settings';
 
+// MD: Added import @Apollo/client 
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+// MD: Added ApolloClient
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    
+    <ApolloProvider client={client}>
     <Router>
       <div className="App">
         <Switch>
@@ -34,6 +43,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+    </ApolloProvider>
 
   );
 }
