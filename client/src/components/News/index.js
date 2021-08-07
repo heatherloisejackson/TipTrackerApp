@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import navBar from "../NavBar";
 
-const getNews = () => {
+const GetNews = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [articles, setArticles] = useState([]);
@@ -58,4 +58,4 @@ const getNews = () => {
 
 // export default News;
 
-export default getNews;
+export default GetNews;
