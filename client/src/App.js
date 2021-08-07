@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Register from './components/Register';
 import MyTips from './components/MyTips';
 import Graph from './components/Graph';
-import News from './components/News';
+import getNews from './components/News';
 import Settings from './components/Settings';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
             <Graph />
           </Route>
           <Route exact path='/news'>
-            <News />
+            <getNews />
           </Route>
           <Route exact path='/settings'>
             <Settings />
