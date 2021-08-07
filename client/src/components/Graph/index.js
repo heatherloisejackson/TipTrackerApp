@@ -23,6 +23,7 @@ import { Chart } from "react-google-charts";
 
 
 const Graph = () => {
+  // Insert the code to make a graphql call here. Use query hook
     return (
         <div className='graph'>
             <h2>Graph</h2>
