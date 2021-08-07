@@ -39,29 +39,30 @@ const Graph = () => {
       </div> */}
       <div>
       <Chart
-  width={'600px'}
-  height={'400px'}
+  width={'100vw'}
+  height={'85vh'}
   chartType="ScatterChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['Age', 'Tips'],
-    [8, 12],
-    [4, 5.5],
-    [11, 14],
-    [4, 5],
-    [3, 3.5],
-    [6.5, 7],
+    ['Day', 'Tips'],
+    ["Monday", 20 ],
+    ["Tuesday", 30],
+    ["Wednesday", 0],
+    ["Thursday", 47.69],
+    ["Friday", 65],
+    ["Saturday", 65],
+    ["Sunday", 30],
   ]}
   options={{
-    title: 'Age vs. Weight comparison',
-    hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
-    vAxis: { title: 'Tips', minValue: 0, maxValue: 15 },
+    title: 'Tips per Week',
+    hAxis: { title: 'Day of the Week', minValue: 1  , maxValue: 7 },
+    vAxis: { title: 'Tips', minValue: 0, maxValue: 100 },
     legend: 'none',
   }}
   rootProps={{ 'data-testid': '1' }}
 />
-      </div>
-        </div>
+    </div>
+</div>
         
     )
 }
