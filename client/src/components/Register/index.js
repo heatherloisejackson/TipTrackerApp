@@ -17,7 +17,7 @@ const Register = () => {
 
                     <div className="password">
                         <input placeholder='Password'></input>
-                        <i class="fas fa-lock password-icon" aria-hidden='true'></i>
+                        <i className="fas fa-lock password-icon" aria-hidden='true'></i>
                     </div>
                     
                     <button type='submit' className='submit-btn'>
