@@ -9,14 +9,14 @@ const TipEntry = (props) => {
     className
   } = props;
 
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
 
   const toggle = () => setModal(!modal);
   buttonLabel = 'Enter Tips';
   
   return (
     <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+      {/* <Button color="danger" onClick={toggle}>{buttonLabel}</Button> */}
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Enter Tips</ModalHeader>
         <ModalBody>
