@@ -1,13 +1,14 @@
 import './index.css';
 import { Link } from 'react-router-dom';
+import footer from '../Footer';
 
 const Home = () => {
     return (
         <div className='main-container'>
             <div className="welcome">
-                <h2>Log-in to your Account</h2>
+                <h2>Welcome to MooLah</h2>
             </div>
-            <main className="card">
+            <main className="login-card">
 
                 <form>
                     <div className="email">
@@ -33,6 +34,7 @@ const Home = () => {
                     </p>
                 </div>
             </main>
+            { footer }
         </div>
     );
 };

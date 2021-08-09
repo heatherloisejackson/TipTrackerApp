@@ -1,5 +1,6 @@
 import './index.css';
 import { Link } from 'react-router-dom';
+import footer from '../Footer';
 
 const Register = () => {
     return (
@@ -7,7 +8,7 @@ const Register = () => {
             <div className="welcome">
                 <h2>Register</h2>
             </div>
-            <main className="card">
+            <main className="register-card">
 
                 <form>
                     <div className="email">
@@ -34,6 +35,7 @@ const Register = () => {
                     </p>
                 </div>
             </main>
+            { footer }
         </div>
      );
 }
