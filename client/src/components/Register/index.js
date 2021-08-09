@@ -1,5 +1,6 @@
 import './index.css';
 import { Link } from 'react-router-dom';
+import footer from '../Footer';
 
 const Register = () => {
     return (
@@ -7,7 +8,7 @@ const Register = () => {
             <div className="welcome">
                 <h2>Register</h2>
             </div>
-            <main className="card">
+            <main className="register-card">
 
                 <form>
                     <div className="email">
@@ -17,7 +18,7 @@ const Register = () => {
 
                     <div className="password">
                         <input placeholder='Password'></input>
-                        <i class="fas fa-lock password-icon" aria-hidden='true'></i>
+                        <i className="fas fa-lock password-icon" aria-hidden='true'></i>
                     </div>
                     
                     <button type='submit' className='submit-btn'>
@@ -34,6 +35,7 @@ const Register = () => {
                     </p>
                 </div>
             </main>
+            { footer }
         </div>
      );
 }

@@ -1,13 +1,14 @@
 import './index.css';
 import { Link } from 'react-router-dom';
+import footer from '../Footer';
 
 const Home = () => {
     return (
         <div className='main-container'>
             <div className="welcome">
-                <h2>Log-in to your Account</h2>
+                <h2>Welcome to MooLah</h2>
             </div>
-            <main className="card">
+            <main className="login-card">
 
                 <form>
                     <div className="email">
@@ -17,7 +18,7 @@ const Home = () => {
 
                     <div className="password">
                         <input placeholder='Password'></input>
-                        <i class="fas fa-lock password-icon" aria-hidden='true'></i>
+                        <i className="fas fa-lock password-icon" aria-hidden='true'></i>
                     </div>
                     
                     <button type='submit' className='submit-btn'>
@@ -33,6 +34,7 @@ const Home = () => {
                     </p>
                 </div>
             </main>
+            { footer }
         </div>
     );
 };
