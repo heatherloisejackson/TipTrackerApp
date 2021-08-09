@@ -19,6 +19,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "jsonwebtoken": "^8.5.1",
     "react-calendar": "^3.4.0"
   }
 }
