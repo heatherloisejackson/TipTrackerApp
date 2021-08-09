@@ -25,7 +25,7 @@ const TipEntry = (props) => {
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>Submit Tips</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Exit</Button>
+          <Button color="secondary" onClick={props.toggleShowModal}>Exit</Button>
         </ModalFooter>
       </Modal>
     </div>
