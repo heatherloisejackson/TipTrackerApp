@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 const uuid = require('uuid4')
+const bcrypt = require('bcrypt');
 
 const accountSchema = new Schema({
   username: {
@@ -19,6 +20,10 @@ const accountSchema = new Schema({
     required: 'You need to give a type!',
     trim: true,
   },
+  password:{
+    type: String,
+    required: 'You need a password!'
+  },
   transaction: [
     {
       amount: {
@@ -33,6 +38,19 @@ const accountSchema = new Schema({
     },
   ],
 });
+
+accountSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+accountSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
 
 const Account = model('Account', accountSchema);
 
