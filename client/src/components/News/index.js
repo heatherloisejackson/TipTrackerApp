@@ -7,9 +7,12 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
+import Divider from "@material-ui/core/Divider";
+import moment from "moment";
 
 import "./index.css";
 import navBar from "../NavBar";
+import { dark } from "@material-ui/core/styles/createPalette";
 
 require("dotenv").config();
 
@@ -17,12 +20,20 @@ const useStyles = makeStyles({
   root: {
     minWidth: 275,
     flexGrow: 1,
+    height: 250,
+    boxShadow: "none",
   },
   title: {
     fontSize: 14,
   },
   pos: {
     marginBottom: 12,
+  },
+  media: {
+    height: 200,
+    width: 300,
+    margin: "auto",
+    paddingTop: 25,
   },
 });
 
@@ -48,12 +59,12 @@ const GetNews = () => {
             _id: article._id,
             headline: article.headline.main,
             abstract: article.abstract,
-            pub_date: article.pub_date,
+            pub_date: moment(article.pub_date).format("dddd, MMM Do"),
             byline: article.byline.original,
             snippet: article.snippet,
             web_url: article.web_url,
             section_name: article.section_name,
-            image: article.multimedia?.[19]?.url
+            image: `https://nytimes.com/${article.multimedia?.[0]?.url}`,
           }));
 
           setArticles(articleData);
@@ -68,23 +79,46 @@ const GetNews = () => {
 
   const classes = useStyles();
 
+  //   const pub_date = moment({article.pub_date}).format('dddd MMM Do YY');
+
   if (error) {
     return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    //   } else if (!isLoaded) {
+    //     return <div>Loading...</div>;
   } else {
     return (
       <div className="news">
         <h2>News</h2>
+        {/* <Grid container spacing={0}>
+          <Grid item xs={12}>
+            <CardMedia
+              component="img"
+              src="/assets/news_header.png"
+              alt="New York Times"
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={0}>
+          <Grid item xs={12}>
+            <CardMedia
+              component="img"
+              image="/assets/news_banner.png"
+              alt="Latest articles from 'Your Money'"
+            />
+          </Grid>
+        </Grid> */}
         <ol>
           {articles.map((article) => (
             <li key={article._id}>
-              <Grid container spacing={0}>
-                <Grid item xs={2}>
+              <Grid container spacing={5}>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={1}>
                   <Card className={classes.root}>
-                    <Typography className={classes.pos} color="textSecondary">
-                      {article.pub_date}
-                    </Typography>
+                    <CardContent>
+                      <Typography className={classes.title} gutterBottom>
+                        {article.pub_date}
+                      </Typography>
+                    </CardContent>
                   </Card>
                 </Grid>
                 <Grid item xs={6}>
@@ -97,7 +131,11 @@ const GetNews = () => {
                       >
                         {article.section_name}
                       </Typography>
-                      <Typography variant="h5" component="h2">
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        fontFamily="Monospace"
+                      >
                         {article.headline}
                       </Typography>
 
@@ -115,15 +153,16 @@ const GetNews = () => {
                     </CardActions>
                   </Card>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
                   <CardMedia
-                      className={classes.media}
-                      component="img"
-                      src="https://nytimes.com/${article.image}" 
-                      alt="news-img"
-                    />
+                    className={classes.media}
+                    component="img"
+                    src={article.image}
+                    alt="Article Thumbnail"
+                  />
                 </Grid>
               </Grid>
+              <Divider variant="middle" />
             </li>
           ))}
         </ol>
