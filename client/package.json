@@ -4,10 +4,13 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "dotenv": "^8.2.0",
     "emmet": "^2.3.4",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-calendar": "^3.4.0",
     "react-dom": "^17.0.1",
