@@ -1,3 +1,11 @@
+ol {
+    list-style: none;
+}
+
+li {
+    text-align: left;
+}
+
 /* DESKTOP */
 
 @media screen and (min-width: 1200px) {
