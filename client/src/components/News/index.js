@@ -9,12 +9,13 @@ import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import Divider from "@material-ui/core/Divider";
 import moment from "moment";
+import header from "./assets/news_header.png";
+import banner from "./assets/news_banner.png";
 
 import "./index.css";
 import navBar from "../NavBar";
-import { dark } from "@material-ui/core/styles/createPalette";
 
-require("dotenv").config();
+const NYT_APIKEY = require("./config");
 
 const useStyles = makeStyles({
   root: {
@@ -45,9 +46,8 @@ const GetNews = () => {
   console.log(articles);
 
   useEffect(() => {
-    const APIKEY = process.env.NYT_APIKEY;
     fetch(
-      `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name:("Your Money")&sort=newest&api-key=bSAhQ4HUGXtpkH7xVjlrgXALMEWxr35z`
+      `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name:("Your Money")&sort=newest&api-key=${NYT_APIKEY}`
     )
       .then((res) => res.json())
       .then(
@@ -79,8 +79,6 @@ const GetNews = () => {
 
   const classes = useStyles();
 
-  //   const pub_date = moment({article.pub_date}).format('dddd MMM Do YY');
-
   if (error) {
     return <div>Error: {error.message}</div>;
     //   } else if (!isLoaded) {
@@ -88,25 +86,23 @@ const GetNews = () => {
   } else {
     return (
       <div className="news">
-        <h2>News</h2>
-        {/* <Grid container spacing={0}>
-          <Grid item xs={12}>
-            <CardMedia
-              component="img"
-              src="/assets/news_header.png"
-              alt="New York Times"
-            />
+
+        <Grid container spacing={0}>
+          <Grid item xs={4}></Grid>
+          <Grid item xs={4}>
+            <CardMedia component="img" src={header} alt="New York Times" />
           </Grid>
+          <Grid item xs={4}></Grid>
         </Grid>
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <CardMedia
               component="img"
-              image="/assets/news_banner.png"
+              image={banner}
               alt="Latest articles from 'Your Money'"
             />
           </Grid>
-        </Grid> */}
+        </Grid>
         <ol>
           {articles.map((article) => (
             <li key={article._id}>
@@ -171,16 +167,5 @@ const GetNews = () => {
     );
   }
 };
-
-// const News = () => {
-//   return (
-//     <div className="news">
-//       <h2>News</h2>
-//       {navBar}
-//     </div>
-//   );
-// };
-
-// export default News;
 
 export default GetNews;
