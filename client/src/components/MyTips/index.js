@@ -6,24 +6,30 @@ import navBar from '../NavBar';
 import TipEntry from '../TipModal';
 
 const Calendar = () => {
+    const [show, setShow] = useState(false);
     const [value, onChange] = useState(new Date());
-/*     const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true); */
-    //const handleShow = () => {return(<TipEntry/>)};
+    const [toggle, setToggle] = useState(true);
+    
+    const what = function setToggles() {
+        if(toggle == false){
+            
+            setToggle(true)
+        }
+        toggle ? setToggle(false): setToggle(true)
+    }
 
     return (
         <div className='calendar-container'>
             <h2>My Tips</h2>
             <div className='calendar'>
-                <ReactCalendar onChange={onChange} value={value} />
-                
+                <ReactCalendar onChange={onChange} value={value} onClickDay={what} tileContent={``}/>
             </div>
-            <TipEntry/>
+            {toggle ? <></> : <TipEntry/> }
+            
             { navBar }
         </div>
     )
 };
 
 export default Calendar
+
