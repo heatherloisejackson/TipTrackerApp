@@ -6,6 +6,7 @@ import MyTips from './components/MyTips';
 import Graph from './components/Graph';
 import GetNews from './components/News';
 import Settings from './components/Settings';
+import NavBar from './components/NavBar';
 
 // MD: Added import @Apollo/client 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -41,6 +42,7 @@ function App() {
             <Settings />
           </Route>
         </Switch>
+        <NavBar/>
       </div>
     </Router>
     </ApolloProvider>
