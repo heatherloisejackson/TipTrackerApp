@@ -24,7 +24,7 @@ const accountSchema = new Schema({
     type: String,
     required: 'You need a password!'
   },
-  transaction: [
+  transactions: [
     {
       amount: {
         type: Number,

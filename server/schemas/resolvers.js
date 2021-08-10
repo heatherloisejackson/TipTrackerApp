@@ -27,11 +27,11 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, password }) => {
+      const user = await Account.findOne({ username });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError('No user found with this username');
       }
 
       const correctPw = await user.isCorrectPassword(password);
@@ -44,11 +44,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addTransaction: async (parent, { accountNumber, user, transactionID, amount, date }) => {
+    addTransaction: async (parent, {user, amount, date }, context) => {
       return Account.findOneAndUpdate(
-        { _id: accountNumber },
+        { _id: user },
         {
-          $addToSet: { transaction: { user, transactionID, amount, date } },
+          $addToSet: { transactions: { user, amount, date } },
         },
         {
           new: true,
@@ -59,7 +59,7 @@ const resolvers = {
     removeAccount: async (parent, { accountID }) => {
       return Account.findOneAndDelete({ _id: accountID });
     },
-    removeTransaction: async (parent, { accountID, transactionId }) => {
+    removeTransaction: async (parent, { accountID, accountNumber }) => {
       return Account.findOneAndUpdate(
         { _id: accountID },
         { $pull: { transaction: { _id: accountID } } },

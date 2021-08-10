@@ -12,7 +12,7 @@ const Register = () => {
 
                 <form>
                     <div className="email">
-                        <input placeholder='E-mail'></input>
+                        <input placeholder='Username'></input>
                         <i className='fas fa-user-alt email-icon' aria-hidden='true'></i>
                     </div>
 

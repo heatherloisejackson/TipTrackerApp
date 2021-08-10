@@ -17,7 +17,7 @@ const TipEntry = (props) => {
   return (
     <div>
       {/* <Button color="danger" onClick={toggle}>{buttonLabel}</Button> */}
-      <Modal isOpen={modal} toggle={toggle} className={className}>
+      <Modal isOpen={modal} toggle={props.toggleShowModal} className={className}>
         <ModalHeader toggle={toggle}>Enter Tips</ModalHeader>
         <ModalBody>
             <span className='p-1'>$</span>
