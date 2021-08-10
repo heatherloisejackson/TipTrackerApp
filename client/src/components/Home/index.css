@@ -2,137 +2,144 @@
 /*!  COLOR PALETTE MOOLAH #60935D / #2E282A / #CD5334 / #EDB88B / #F7F3E3 */
 
 .main-container {
-    color: #2E282A;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    background-color: #F7F3E3;
+  color: #2e282a;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f3e3;
+  background-image: url(./moolah-background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .welcome {
-    position: absolute;
-    top: 30vh;
+  position: absolute;
+  top: 30vh;
 }
 
 .welcome h2 {
-    color: #2E282A;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.354);
+  color: #2e282a;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.354);
 }
 
 .login-card {
-    align-self: center;
-    height: 20vh;
-    width: 30vw;
-    border: 1px solid #2E282A;
-    border-radius: 5px;
-    box-shadow: 0px 1px 5px #2E282A;
-    background-color:#EDB88B;
+  align-self: center;
+  height: 20vh;
+  width: 30vw;
+  border: 1px solid #2e282a;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px #2e282a;
+  background-color: #edb88b;
 }
 
 form {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 input {
-    height: 4vh;
-    width: 28vw;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.313);
-    text-indent: .5vw;
- }
+  height: 4vh;
+  width: 28vw;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.313);
+  text-indent: 0.5vw;
+}
 
 input:focus {
-    outline: none;
-    border: 1px solid #2E282A;
+  outline: none;
+  border: 1px solid #2e282a;
 }
 
 .submit-btn {
-    height: 5vh;
-    width: 28vw;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.313);
-    cursor: pointer;
-    background-color:#F7F3E3;
+  height: 5vh;
+  width: 28vw;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.313);
+  cursor: pointer;
+  background-color: #f7f3e3;
 }
 
 div i {
-    position: absolute;
-    margin: 6px 0 0 -25px;
-    color: #2E282A;
+  position: absolute;
+  margin: 6px 0 0 -25px;
+  color: #2e282a;
 }
 
 .password {
-    padding: 1vh 0;
+  padding: 1vh 0;
 }
 
 .register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 6vh;
-    width: 30vw;
-    color: #2E282A;
-    border: 1px solid #2E282A;
-    margin: 4vh 0 0 0;
-    padding: 2vh 0 0 0;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px #2E282A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6vh;
+  width: 30vw;
+  color: #2e282a;
+  border: 1px solid #2e282a;
+  margin: 4vh 0 0 0;
+  padding: 2vh 0 0 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #2e282a;
+  background-color: #f7f3e3;
 }
 
 .register a {
-    color: #2E282A;
-    text-decoration: none;
-    padding: 0 0 0 .25vw;
+  color: #2e282a;
+  text-decoration: none;
+  padding: 0 0 0 0.25vw;
 }
 
 .register a:hover {
-    color: grey;
+  color: grey;
 }
 
 /* TABLETS */
 
 @media screen and (max-width: 1200px) {
-    .main-container {
-        color: blue;
-    }
+  .main-container {
+    color: blue;
+  }
 
-    .card {
-        min-width: 400px;
-    }
+  .card {
+    min-width: 400px;
+  }
 
-    form input, button {
-        min-width: 350px;
-    }
+  form input,
+  button {
+    min-width: 350px;
+  }
 }
 
 /* LARGE CELLPHONES */
 
 @media screen and (max-width: 600px) {
-    .main-container {
-        color: orange;
-    }
+  .main-container {
+    color: orange;
+  }
 
-    .card {
-        min-width: 300px;
-    }
+  .card {
+    min-width: 300px;
+  }
 
-    form input, button {
-        min-width: 250px;
-    }
+  form input,
+  button {
+    min-width: 250px;
+  }
 }
 
 /* SMALL CELLPHONES */
 
 @media screen and (max-width: 425px) {
-    .main-container {
-        color: green;
-    }
-    
-    .card {
-        min-width: 265px;
-    }
+  .main-container {
+    color: green;
+  }
 
-    form input, button {
-        min-width: 200px;
-    }
+  .card {
+    min-width: 265px;
+  }
+
+  form input,
+  button {
+    min-width: 200px;
+  }
 }
