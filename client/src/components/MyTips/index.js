@@ -4,30 +4,30 @@ import 'react-calendar/dist/Calendar.css';
 import './index.css';
 import navBar from '../NavBar';
 import TipEntry from '../TipModal';
-
-const Calendar = () => {
+import moment from 'moment';
+const Calendar = (props) => {
     const [show, setShow] = useState(false);
-    const [value, onChange] = useState(new Date());
+    const [date, onChange] = useState(new Date()/* moment().format("MMM Do YY") */);
     const [showModal, setShowModal] = useState(false);
-    
-    const toggleShowModal = () => {
-        const newShowModal = !showModal;
-        console.log(newShowModal);
-        setShowModal(newShowModal)
+
+
+    const toggleShowModal = (e) => {
+        //const newShowModal = !showModal;
+        //console.log('Date:', date)
+        setShowModal(!showModal)
     }
 
     return (
+    
         <div className='calendar-container'>
             <h2>My Tips</h2>
             <div className='calendar'>
-                <ReactCalendar onChange={onChange} value={value} onClickDay={toggleShowModal} tileContent={``}/>
+                <ReactCalendar onChange={onChange} date={date} onClickDay={toggleShowModal} tileContent={``}/>
             </div>
-            {showModal ? <TipEntry toggleShowModal={toggleShowModal} /> : <></> }
-            
+            {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal} date={date}/* value={value} *//> : <></> }
             { navBar }
         </div>
     )
 };
 
 export default Calendar
-
