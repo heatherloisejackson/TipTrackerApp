@@ -1,39 +1,80 @@
 import './index.css';
 import navBar from '../NavBar';
-import * as React from "react";
+// import * as React from "react";
 import { Chart } from "react-google-charts";
-
-// MD Import the useQuery() hook from Apollo Client
 import { useQuery } from '@apollo/client';
-
-// MD Import the query we are going to execute from its file
 import { QUERY_TRANSACTIONS } from '../../utils/queries';
+import React, { useState } from "react";
+
+ 
+
 
 const Graph = () => {
-  // MD Inserted the code to make a graphql call here. Use query hook
+
   const { data } = useQuery(QUERY_TRANSACTIONS);
+  const transations = data?.transactions || [];
+
+  const obj = [
+    ['date', 'amount'],
+    ["Monday", 20 ],
+    ["Tuesday", 30],
+    ["Wednesday", 0],
+    ["Thursday", 47.69],
+    ["Friday", 65],
+    ["Saturday", 65],
+    ["Sunday", 30],
+    ]
+
+
+  console.log(data)
+// obj.push(['date','amount'])
+// for(let i = 0; i < data.accounts[0].transactions.length; i++){
+//   obj.push([data.accounts[0].transactions[i].date, data.accounts[0].transactions[i].amount])
+// }
+  // console.log(data)
+  // for(let i = 0; i < data.length; i++){
+  //   console.log(data[i])
+  //   }
 
     return (
-  <div className='graph'>
-            <h2>Graph</h2>
-            { navBar }
-      <div>
-        {console.log(data)}
+  <div>
+  { navBar }
+  <div>
+        
       <Chart
           width={'100vw'}
           height={'85vh'}
           chartType="ScatterChart"
           loader={<div>Loading Chart</div>}
-          data={[
-                ['date', 'amount'],
-                ["Monday", 20 ],
-                ["Tuesday", 30],
-                ["Wednesday", 0],
-                ["Thursday", 47.69],
-                ["Friday", 65],
-                ["Saturday", 65],
-                ["Sunday", 30],
-                ]}
+          // data={transactions}
+
+          data={obj}
+
+
+          // data={data.map((account) => ({
+          //   user: account.user,
+          //   amount: account.amount,
+          //   date: account.date,
+          // }))}
+          
+          
+          // // {data.length.map((account) => ({
+          // //   user: account.user,
+          // //   amount: account.amount,
+          // //   date: account.date
+          // // })}
+
+          
+          // data={[
+          //       ['date', 'amount'],
+          //       ["Monday", 20 ],
+          //       ["Tuesday", 30],
+          //       ["Wednesday", 0],
+          //       ["Thursday", 47.69],
+          //       ["Friday", 65],
+          //       ["Saturday", 65],
+          //       ["Sunday", 30],
+          //       ]}
 
           options={{
           title: 'Tips per Week',
