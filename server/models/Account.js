@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
 const uuid = require('uuid4')
 const bcrypt = require('bcrypt');
 
@@ -22,9 +21,7 @@ const accountSchema = new Schema({
         required: true,
       },
       date: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
+        type: String
       },
     },
   ],

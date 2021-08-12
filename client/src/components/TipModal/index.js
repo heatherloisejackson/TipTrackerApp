@@ -6,15 +6,10 @@ import { QUERY_TRANSACTIONS } from "../../utils/queries";
 import { ADD_TRANSACTION } from "../../utils/mutations";
 import { useMutation, useQuery } from "@apollo/client";
 import moment from "moment";
+import decode from 'jwt-decode';
 
 const TipEntry = (props) => {
-  const { buttonLabel, className } = props;
-  //const { loading, data } = useQuery(QUERY_TRANSACTIONS);
-  //const { addTip } = useMutation(ADD_TIP);
-  // const [tip, setTip] = useState({
-  //   date: null,
-  //   amount: null,
-  // });
+  const { className } = props;
   const [amount, setAmount] = useState("");
   const [modal, setModal] = useState(true);
   const [addTransaction, { error, data }] = useMutation(ADD_TRANSACTION);
@@ -34,34 +29,20 @@ const TipEntry = (props) => {
     console.log();
   };
 
-  // const handleTipEntry = (e) => {
-  //   e.preventDefault();
-  //   setTip({
-  //     //! remember to format date to match database / date currently displayed as "Aug 11th 21"
-  //     date: moment(props.date).format("MMM Do YY"),
-  //     amount: e.target.value,
-  //   });
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     props.toggleShowModal(false);
-    // setTip(moment(props.date).format("MMM Do YY"), amount);
-    //setTip(props.amount);ß
-    console.log("Tip Entry: ", amount);
-    console.log("Date Entry: ", moment(props.date).format("MMM Do YY"));
-
+    const id = decode(localStorage.getItem('id_token'))
     const tip = {
-      username: "heatherjackson",
+      _id: id.data._id,
       amount: parseFloat(amount),
-      date: moment(props.date).format("MMM Do YY")
+      date: moment(props.date).format("MM-DD-YYYY")
     }
-
     try {
       const { data } = await addTransaction({
         variables: { ...tip },
       });
-
     } catch (e) {
       console.error(e);
     }

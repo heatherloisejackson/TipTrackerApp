@@ -25,10 +25,9 @@ mutation addAccount(
 `;
 
 export const ADD_TRANSACTION = gql`
-mutation addTransaction($username: String!, $amount: Float!, $date: String) {
-  addTransaction(username: $username, amount: $amount, date: $date) {
+mutation addTransaction($_id: ID, $amount: Float!, $date: String) {
+  addTransaction(_id: $_id, amount: $amount, date: $date) {
     _id
-    username
     transactions{
       amount
       date
