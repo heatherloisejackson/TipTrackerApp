@@ -36,11 +36,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addTransaction: async (parent, { amount, date }, context) => {
+    addTransaction: async (parent, { username, amount, date }, context) => {
+      const dateObj = new Date(date);
+
       return Account.findOneAndUpdate(
-        { _id: context.user._id },
+        { username: username },
         {
-          $addToSet: { transactions: { amount, date } },
+          $addToSet: { transactions: { amount, dateObj } },
         },
         {
           new: true,

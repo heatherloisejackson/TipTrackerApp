@@ -25,8 +25,10 @@ const Calendar = (props) => {
             <div className='calendar'>
                 <ReactCalendar onChange={onChange} tileContent={"pog"} date={date} onClickDay={toggleShowModal} tileContent={``}/>
             </div>
+
             {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal} date={date}/* value={value} *//> : <></> }
             <NavBar/>
+
         </div>
     )
 };
