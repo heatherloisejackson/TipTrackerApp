@@ -1,5 +1,21 @@
 /* DESKTOPS */
 
+circle:nth-child(odd) {
+    fill: red;
+    r: 7.5;
+}
+
+
+circle:nth-child(even) {
+    fill: blue;
+    r: 7.5;
+}
+
+text:nth-child(odd){
+    font-weight: bold;
+}
+
+
 @media screen and (min-width: 1200px) {
     .graph {
         color: black;

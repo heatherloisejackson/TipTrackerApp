@@ -40,7 +40,7 @@ const Graph = () => {
   <div>
   { navBar }
   <div>
-        
+    
       <Chart
           width={'100vw'}
           height={'85vh'}
