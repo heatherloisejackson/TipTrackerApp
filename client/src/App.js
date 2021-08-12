@@ -8,6 +8,7 @@ import MyTips from './components/MyTips';
 import Graph from './components/Graph';
 import GetNews from './components/News';
 import Settings from './components/Settings';
+import NavBar from './components/NavBar';
 
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -56,6 +57,7 @@ function App() {
             <Settings />
           </Route>
         </Switch>
+        <NavBar/>
       </div>
     </Router>
     </ApolloProvider>

@@ -8,6 +8,18 @@ nav a:hover {
     text-decoration: none;
 }
 
+.Mui-selected {
+    color: #2E282A;
+}
+
+a:hover{
+    color: #2E282A;
+}
+
+.MuiFab-secondary:hover {
+    background-color: #CD5334;
+}
+
 @media screen and (min-width: 1200px) {
     nav {
         display: flex;
