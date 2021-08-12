@@ -16,10 +16,13 @@ const Home = () => {
               <i className="fas fa-user-alt email-icon" aria-hidden="true"></i>
             </div>
 
-            <div className="password">
-              <input placeholder="Password"></input>
-              <i className="fas fa-lock password-icon" aria-hidden="true"></i>
-            </div>
+
+                <form>
+                    <div className="email">
+                        <input placeholder='Username'></input>
+                        <i className='fas fa-user-alt email-icon' aria-hidden='true'></i>
+                    </div>
+
 
             <button type="submit" className="submit-btn">
               <Link to="/mytips">Sign in</Link>

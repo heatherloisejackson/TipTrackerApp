@@ -2,18 +2,33 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Register from './components/Register';
+import Signup from './pages/Signup';
+import Login from './pages/login';
 import MyTips from './components/MyTips';
 import Graph from './components/Graph';
 import GetNews from './components/News';
 import Settings from './components/Settings';
 import NavBar from './components/NavBar';
 
-// MD: Added import @Apollo/client 
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
-// MD: Added ApolloClient
-const client = new ApolloClient({
+const httpLink = createHttpLink({
   uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -24,10 +39,10 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path='/'>
-            <Home />
+            <Login/>
           </Route>
           <Route exact path='/register'>
-            <Register />
+          <Signup/>
           </Route>
           <Route exact path='/mytips'>
             <MyTips />

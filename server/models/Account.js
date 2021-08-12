@@ -11,20 +11,11 @@ const accountSchema = new Schema({
     maxlength: 35,
     trim: true,
   },
-  accountNumber: {
-    type: Number,
-    default: uuid()
-  },
-  accountType: {
-    type: String,
-    required: 'You need to give a type!',
-    trim: true,
-  },
   password:{
     type: String,
     required: 'You need a password!'
   },
-  transaction: [
+  transactions: [
     {
       amount: {
         type: Number,
