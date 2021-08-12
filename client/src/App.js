@@ -55,7 +55,6 @@ function App() {
             <Settings />
           </Route>
         </Switch>
-        <NavBar/>
       </div>
     </Router>
     </ApolloProvider>

@@ -13,7 +13,7 @@ import header from "./assets/news_header.png";
 import banner from "./assets/news_banner.png";
 
 import "./index.css";
-import navBar from "../NavBar";
+import NavBar from "../NavBar";
 
 const NYT_APIKEY = require("./config");
 
@@ -162,7 +162,7 @@ const GetNews = () => {
             </li>
           ))}
         </ol>
-        {navBar}
+        <NavBar/>
       </div>
     );
   }

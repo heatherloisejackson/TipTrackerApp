@@ -1,5 +1,5 @@
 import "./index.css";
-import navBar from "../NavBar";
+import NavBar from "../NavBar";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
@@ -210,6 +210,7 @@ const Settings = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <NavBar/>
     </div>
   );
 };
