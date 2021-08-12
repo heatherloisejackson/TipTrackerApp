@@ -8,8 +8,8 @@ const resolvers = {
       return Account.find();
     },
 
-    account: async (parent, { accountNumber }) => {
-      return Account.findOne({ accountNumber: accountNumber });
+    account: async (parent, { }, context) => {
+      return Account.findOne({ _id: context.user._id });
     },
 
     transactions: async () => {
@@ -22,8 +22,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addAccount: async (parent, { username, accountNumber, accountType, password }) => {
-      const user = await Account.create({ username, accountNumber, accountType, password });
+    addAccount: async (parent, { username, password }) => {
+      const user = await Account.create({ username, password });
       const token = signToken(user);
       return { token, user };
     },
@@ -59,7 +59,7 @@ const resolvers = {
     removeAccount: async (parent, { accountID }) => {
       return Account.findOneAndDelete({ _id: accountID });
     },
-    removeTransaction: async (parent, { accountID, accountNumber }) => {
+    removeTransaction: async (parent, { accountID }) => {
       return Account.findOneAndUpdate(
         { _id: accountID },
         { $pull: { transaction: { _id: accountID } } },
