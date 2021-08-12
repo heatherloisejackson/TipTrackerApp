@@ -32,7 +32,6 @@ const Signup = () => {
       const { data } = await addAccount({
         variables: { ...formState },
       });
-
       AuthService.login(data.addAccount.token);
     } catch (e) {
       console.error(e);
@@ -74,7 +73,7 @@ const Signup = () => {
               </div>
 
               <button type='submit' className='submit-btn'>
-                  Register
+                Register
               </button>
             </form>
             <div className="register">

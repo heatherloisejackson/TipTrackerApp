@@ -32,6 +32,7 @@ const TipEntry = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(e);
     props.toggleShowModal(false);
     const id = decode(localStorage.getItem('id_token'))
     const tip = {
@@ -43,8 +44,8 @@ const TipEntry = (props) => {
       const { data } = await addTransaction({
         variables: { ...tip },
       });
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     }
   };
 

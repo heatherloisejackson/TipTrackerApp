@@ -17,6 +17,7 @@ mutation addAccount(
     username: $username
     password: $password
   ) {
+    token
     user {
       _id
     }
