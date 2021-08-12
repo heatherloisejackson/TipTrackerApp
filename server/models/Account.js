@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const uuid = require('uuid4')
 const bcrypt = require('bcrypt');
+const dateFormat = require('../utils/dateFormat');
 
 const accountSchema = new Schema({
   username: {
@@ -21,7 +22,8 @@ const accountSchema = new Schema({
         required: true,
       },
       date: {
-        type: String
+        type: Date,
+        get: (timestamp) => dateFormat(timestamp),
       },
     },
   ],
