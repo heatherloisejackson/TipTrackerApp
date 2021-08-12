@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import ReactCalendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './index.css';
-import navBar from '../NavBar';
+import NavBar from '../NavBar';
 import TipEntry from '../TipModal';
 import moment from 'moment';
+
 const Calendar = (props) => {
     const [show, setShow] = useState(false);
     const [date, onChange] = useState(new Date()/* moment().format("MMM Do YY") */);
@@ -24,8 +25,10 @@ const Calendar = (props) => {
             <div className='calendar'>
                 <ReactCalendar onChange={onChange} tileContent={"pog"} date={date} onClickDay={toggleShowModal} tileContent={``}/>
             </div>
-            {showModal ? <TipEntry date={date} toggleShowModal={toggleShowModal} date={date}/* value={value} *//> : <></> }
-            { navBar }
+
+            {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal} date={date}/* value={value} *//> : <></> }
+            <NavBar/>
+
         </div>
     )
 };
