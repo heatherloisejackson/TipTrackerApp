@@ -2,8 +2,6 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Register from './components/Register';
-import Signup from './pages/Signup';
-import Login from './pages/login';
 import MyTips from './components/MyTips';
 import Graph from './components/Graph';
 import GetNews from './components/News';
@@ -39,10 +37,10 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path='/'>
-            <Login/>
+            <Home/>
           </Route>
           <Route exact path='/register'>
-          <Signup/>
+          <Register/>
           </Route>
           <Route exact path='/mytips'>
             <MyTips />
