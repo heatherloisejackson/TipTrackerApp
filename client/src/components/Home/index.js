@@ -1,44 +1,106 @@
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils/mutations';
+import footer from '../Footer/index';
 import "./index.css";
-import { Link } from "react-router-dom";
-import footer from "../Footer";
 
-const Home = () => {
-  return (
-    <div className="background">
-      <div className="main-container">
-        <div className="welcome">
-          <h2>Welcome to MooLah</h2>
-        </div>
-        <main className="login-card">
-          <form>
-            <div className="email">
-              <input placeholder="E-mail"></input>
-              <i className="fas fa-user-alt email-icon" aria-hidden="true"></i>
+import AuthService from '../../utils/auth';
+
+const Login = (props) => {
+    const [formState, setFormState] = useState({ username: '', password: '' });
+    const [login, { error, data }] = useMutation(LOGIN_USER);
+
+    // update state based on form input changes
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
+    // submit form
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const { data } = await login({
+                variables: { ...formState },
+            });
+
+            AuthService.login(data.login.token);
+            console.log(data);
+            // this.props.history.push("/mytips")
+            // useHistory().push("/mytips")
+        } catch (e) {
+            console.error(e);
+        }
+
+        // clear form values
+        setFormState({
+            user: '',
+            password: '',
+        });
+    };
+
+    return (
+        <div className='main-container'>
+            <div className="welcome">
+                <h2>Welcome to MooLah</h2>
             </div>
+            <main className="login-card">
+                {data ? (
+                    <p>
+                        Success! You may now head{' '}
+                        {/* <Link to="/mytips">back to the homepage.</Link> */}
+                    </p>
+                ) : (
+                    <div>
+                        <form onSubmit={handleFormSubmit}>
+                            <div className="email">
+                                <input placeholder='Username'
+                                    name="username"
+                                    type="text"
+                                    value={formState.name}
+                                    onChange={handleChange}
+                                ></input>
+                                <i className='fas fa-user-alt email-icon' aria-hidden='true'></i>
+                            </div>
 
+                            <div className="password">
+                                <input placeholder='Password'
+                                    name="password"
+                                    type="password"
+                                    value={formState.password}
+                                    onChange={handleChange}
+                                ></input>
+                                <i className="fas fa-lock password-icon" aria-hidden='true'></i>
+                            </div>
 
-                <form>
-                    <div className="email">
-                        <input placeholder='Username'></input>
-                        <i className='fas fa-user-alt email-icon' aria-hidden='true'></i>
+                            <button type='submit' className='submit-btn'>
+                                Sign in
+                            </button>
+                        </form>
+                        <div className="register">
+                            <p>
+                                New around here?
+                                <Link to='/register'>Sign Up!</Link>
+                            </p>
+                        </div>
                     </div>
+                )}
+                {error && (
+                    <div className="my-3 p-3 bg-danger text-white">
+                        {error.message}
+                    </div>
+                )}
+            </main>
 
-
-            <button type="submit" className="submit-btn">
-              <Link to="/mytips">Sign in</Link>
-            </button>
-          </form>
-          <div className="register">
-            <p>
-              New around here?
-              <Link to="/register">Sign Up!</Link>
-            </p>
-          </div>
-        </main>
-        {footer}
-      </div>
-    </div>
-  );
+            {footer}
+        </div>
+    );
 };
 
-export default Home;
+export default Login;
