@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Account, Transaction } = require('../models');
+const { Account } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -10,14 +10,6 @@ const resolvers = {
 
     account: async (parent, { }, context) => {
       return Account.findOne({ _id: context.user._id });
-    },
-
-    transactions: async () => {
-      return Transaction.find();
-    },
-
-    transaction: async (parent, { transactionID }) => {
-      return Transaction.findOne({ transactionID: transactionID });
     },
   },
 
@@ -44,11 +36,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addTransaction: async (parent, {user, amount, date }, context) => {
+    addTransaction: async (parent, { amount, date }, context) => {
       return Account.findOneAndUpdate(
-        { _id: user },
+        { _id: context.user._id },
         {
-          $addToSet: { transactions: { user, amount, date } },
+          $addToSet: { transactions: { amount, date } },
         },
         {
           new: true,

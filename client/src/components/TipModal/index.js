@@ -3,15 +3,43 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './index.css';
 import { QUERY_TRANSACTIONS } from '../../utils/queries';
-import { ADD_TIP } from '../../utils/mutations';
+import { ADD_TRANSACTION } from '../../utils/mutations';
 import { useMutation, useQuery } from '@apollo/client';
 import moment from 'moment';
-
 
 const TipEntry = (props) => {
   //const { loading, data } = useQuery(QUERY_TRANSACTIONS);
   //const { addTip } = useMutation(ADD_TIP);
   
+  const [formState, setFormState] = useState({
+    user: '',
+    amount: '',
+    date: '',
+  });
+  const [addTransaction, { error, data }] = useMutation(ADD_TRANSACTION);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addTransaction({
+        variables: { ...formState },
+      });
+
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   const {
     buttonLabel,
     className
@@ -60,7 +88,7 @@ const TipEntry = (props) => {
 
           <ModalBody>
               <label htmlFor="amount">$</label>
-              <input className='tip-entry' type="text" id="amount" onChange={handleTipEntry} placeholder='Enter Tip Here'/>
+              <input className='tip-entry' type="text" id="amount" onChange={handleTipEntry} onSubmit={handleFormSubmit} placeholder='Enter Tip Here'/>
           </ModalBody>
 
           <ModalFooter>

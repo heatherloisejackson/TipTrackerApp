@@ -8,8 +8,6 @@ const typeDefs = gql`
   }
 
   type Transaction {
-    _id: ID
-    user: Bank_Account
     amount: Float!
     date: String
   }
@@ -22,15 +20,13 @@ const typeDefs = gql`
   type Query {
     accounts: [Bank_Account]!
     account(_id: ID!): Bank_Account
-    transactions: [Transaction]
-    transaction( _id: ID!): Transaction
   }
 
   type Mutation {
     login(username: String!, password: String!): Auth
     addTransaction(user: String!, amount: Float!, date: String): Bank_Account
     addAccount(username: String!, password: String!): Auth
-    removeAccount(accountID: ID!): Transaction
+    removeAccount(accountID: ID!): Bank_Account
     removeTransaction(accountID: ID!, transactionId: ID!): Bank_Account
   }
 `;

@@ -11,7 +11,7 @@ const Calendar = (props) => {
     const [showModal, setShowModal] = useState(false);
 
 
-    const toggleShowModal = (e) => {
+    const toggleShowModal = (e, value) => {
         //const newShowModal = !showModal;
         //console.log('Date:', date)
         setShowModal(!showModal)
@@ -22,7 +22,7 @@ const Calendar = (props) => {
         <div className='calendar-container'>
             <h2>My Tips</h2>
             <div className='calendar'>
-                <ReactCalendar onChange={onChange} date={date} onClickDay={toggleShowModal} tileContent={``}/>
+                <ReactCalendar onChange={onChange} tileContent={"pog"} date={date} onClickDay={toggleShowModal} tileContent={``}/>
             </div>
             {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal} date={date}/* value={value} *//> : <></> }
             { navBar }
