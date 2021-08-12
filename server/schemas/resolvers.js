@@ -8,8 +8,8 @@ const resolvers = {
       return Account.find();
     },
 
-    account: async (parent, { }, context) => {
-      return Account.findOne({ _id: context.user._id });
+    account: async (parent, { _id }) => {
+      return Account.findOne({ _id: _id })
     },
   },
 

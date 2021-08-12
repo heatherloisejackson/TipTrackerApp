@@ -3,13 +3,13 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_TRANSACTIONS = gql`
-  # create a GraphQL query to be executed by Apollo Client
-  query allAccount {
-    accounts {
-      transactions {
-        amount
-        date
-      }
+query oneAccount($_id: ID!) {
+  account(_id: $_id) {
+    _id
+    transactions {
+      amount
+      date
     }
   }
+}
 `;

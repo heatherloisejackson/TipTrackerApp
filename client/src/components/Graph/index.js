@@ -1,36 +1,43 @@
 import "./index.css";
 import NavBar from "../NavBar";
-// import * as React from "react";
 import { Chart } from "react-google-charts";
 import { useQuery } from "@apollo/client";
 import { QUERY_TRANSACTIONS } from "../../utils/queries";
-import React, { useState } from "react";
+import React from "react";
+import decode from 'jwt-decode';
 
-const Graph = () => {
-  const { data } = useQuery(QUERY_TRANSACTIONS);
-  const transations = data?.transactions || [];
+const Graph = (props) => {
+  const id = decode(localStorage.getItem('id_token'))
+  const _id = id.data._id
+  const { loading, error, data } = useQuery(QUERY_TRANSACTIONS, {
+    variables: { _id },
+  });
+  var obj = []
+  if (error) console.log(error);
+  if (loading) {return 'Loading...'} else {
+    
+  
 
-  const obj = [
-    ["date", "amount"],
-    ["Monday", 20],
-    ["Tuesday", 30],
-    ["Wednesday", 0],
-    ["Thursday", 47.69],
-    ["Friday", 65],
-    ["Saturday", 65],
-    ["Sunday", 30],
-  ];
+  const loadData = () =>{
+      obj.push(['date', 'amount'])
+      for (let i = 0; i < data.account.transactions.length; i++) {
+        obj.push([data.account.transactions[i].date, data.account.transactions[i].amount])
+      }
+      console.log(obj);
+      return obj
+  }
 
-  console.log(data);
-  // obj.push(['date','amount'])
-  // for(let i = 0; i < data.accounts[0].transactions.length; i++){
-  //   obj.push([data.accounts[0].transactions[i].date, data.accounts[0].transactions[i].amount])
-  // }
-  // console.log(data)
-  // for(let i = 0; i < data.length; i++){
-  //   console.log(data[i])
-  //   }
-
+  // const obj = [
+  //   ["date", "amount"],
+  //   ["Monday", 20],
+  //   ["Tuesday", 30],
+  //   ["Wednesday", 0],
+  //   ["Thursday", 47.69],
+  //   ["Friday", 65],
+  //   ["Saturday", 65],
+  //   ["Sunday", 30],
+  // ];
+  loadData()
   return (
     <div>
       <div>
@@ -74,9 +81,9 @@ const Graph = () => {
           rootProps={{ "data-testid": "1" }}
         />
       </div>
-      <NavBar/>
+      <NavBar />
     </div>
   );
-};
+}}
 
 export default Graph;
