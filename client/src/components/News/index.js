@@ -141,7 +141,7 @@ const GetNews = () => {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button size="small" href={article.web_url}>
+                      <Button size="small" href={article.web_url} target="_blank">
                         Read more
                       </Button>
                     </CardActions>
