@@ -62,6 +62,7 @@ const Graph = (props) => {
           />
         </div>
         <NavBar />
+
       </div>
     );
   }

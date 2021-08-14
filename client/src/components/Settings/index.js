@@ -10,6 +10,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Button from '@material-ui/core/Button';
 import AuthService from "../../utils/auth";
+import decode from 'jwt-decode';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,6 +42,8 @@ const Settings = () => {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const decoded = decode(localStorage.getItem('id_token'))
 
   return (
     <div className={classes.root}>
@@ -78,24 +81,11 @@ const Settings = () => {
         >
           <Typography className={classes.heading}>Your Account</Typography>
           <Typography className={classes.secondaryHeading}>
-            See account details here
+          {decoded.data.username}
           </Typography>
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>
-            Name: {/* {account.firstName} {account.lastName}*/} Heather Jackson
-          </Typography>
-          <Typography>
-            Username: {/* {account.username} */} hmjackson917
-          </Typography>
-          <Typography>
-            Date Joined: {/* {account.dateCreated} */} 08/11/2021
-          </Typography>
-          <Typography>
-            Company: {/* {account.company} */} Bok Bar
-          </Typography>
-          <Typography>
-            Position: {/* {account.position} */} Bartender
           </Typography>
         </AccordionDetails>
       </Accordion>
