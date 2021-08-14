@@ -32,7 +32,7 @@ const useStyles = makeStyles({
   },
   media: {
     height: 200,
-    width: 300,
+    width: 270,
     margin: "auto",
     paddingTop: 25,
   },
@@ -104,7 +104,7 @@ const GetNews = () => {
         <ol>
           {articles.map((article) => (
             <li key={article._id}>
-              <Grid container spacing={5}>
+              <Grid container spacing={0} className="flex">
                 <Grid item xs={1}></Grid>
                 <Grid item xs={1}>
                   <Card className={classes.root}>
