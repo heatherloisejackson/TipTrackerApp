@@ -1,5 +1,8 @@
-button .btn {
-    content: 'Enter Tips';
+
+.tip-submit-btn {
+    color: #fff;
+    background-color: #60935D;
+    border-color: #6c757d;
 }
 
 .tip-entry {
@@ -18,4 +21,31 @@ button .btn {
 
 .modal-footer {
    justify-content: center;
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 1200px) {
+   
+}
+
+/* LARGE CELLPHONES */
+
+@media screen and (max-width: 600px) {
+
+}
+
+/* SMALL CELLPHONES */
+
+@media screen and (max-width: 465px) {
+    .tip-entry {
+        margin: -2vh 0 0 1vw;
+        height: 8vh;
+        width: 70vw;
+        text-indent: 2vw;
+    }
 }
