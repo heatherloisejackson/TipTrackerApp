@@ -46,6 +46,7 @@ const Graph = (props) => {
           height={"85vh"}
           chartType="ScatterChart"
           loader={<div>Loading Chart</div>}
+
           data={obj}
 
           options={{
