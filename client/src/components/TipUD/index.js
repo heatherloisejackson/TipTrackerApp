@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./index.css";
-import { QUERY_TRANSACTIONS } from "../../utils/queries";
-import { ADD_TRANSACTION } from "../../utils/mutations";
-import { useMutation, useQuery } from "@apollo/client";
-import moment from "moment";
-import decode from 'jwt-decode';
+import { UPDATE_TRANSACTION, REMOVE_TRANSACTION } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 const TipUD = (props) => {
   const { className } = props;
   const [amount, setAmount] = useState("");
   const [modal, setModal] = useState(true);
-  const [addTransaction, { error, data }] = useMutation(ADD_TRANSACTION);
+  const [updateTransaction, { error, data }] = useMutation(UPDATE_TRANSACTION);
+  const [transactionID, setTransactionID] = useState(props.transID);
+  const [removeTransaction] = useMutation(REMOVE_TRANSACTION, {
+    variables: {
+      _id: props.transID
+    }
+  })
 
   const handleChange = (event) => {
     const { value } = event.target;
-
     setAmount(value);
   };
 
@@ -24,26 +26,32 @@ const TipUD = (props) => {
     setModal(!modal);
   };
 
-  const handleDateClick = (e) => {
-    e.preventDefault();
-  };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     props.toggleShowModal(false);
     const tip = {
+      _id: transactionID,
       amount: parseFloat(amount),
-      date: moment(props.date).format("MM-DD-YYYY")
     }
     try {
-      const { data } = await addTransaction({
-        variables: { ...tip },
+      const { data } = await updateTransaction({
+        variables: tip ,
       });
     } catch (error) {
       console.error(error);
     }
+    window.location.reload()
   };
+
+  const deleteTransaction = () => {
+    try{
+      removeTransaction()
+    } catch(err){
+      console.error(err);
+    }
+    window.location.reload()
+  }
 
   return (
     <div>
@@ -65,7 +73,7 @@ const TipUD = (props) => {
               id="amount"
               name="amount"
               onChange={handleChange}
-              placeholder="Enter Tip Here"
+              placeholder="Enter new tip amount"
             />
           </ModalBody>
 
@@ -73,11 +81,16 @@ const TipUD = (props) => {
             {/*//? when onClick is uncommented 'Submit Tips' will not log to console but now modal will not close until 'Exit' BTN is clicked */}
             <Button
               color="primary"
-              type="submit" /* onClick={props.toggleShowModal} */
+              type="submit" 
             >
-              Submit Tips
+              Update Tip
             </Button>
-            {/* {' '} */}
+            <Button
+              color="danger"
+              onClick={deleteTransaction}
+            >
+              Delete Tip
+            </Button>
             <Button color="secondary" onClick={props.toggleShowModal}>
               Exit
             </Button>

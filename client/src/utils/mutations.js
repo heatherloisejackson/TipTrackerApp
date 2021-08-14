@@ -36,3 +36,19 @@ mutation addTransaction($_id: ID, $amount: Float!, $date: String) {
   }
 }
 `
+
+export const UPDATE_TRANSACTION = gql`
+mutation updateTransaction($_id:ID!,$amount: Int!){
+  updateTransaction(_id:$_id, amount: $amount){
+    amount
+  }
+}
+`
+
+export const REMOVE_TRANSACTION = gql`
+mutation removeTransaction($_id: ID!){
+  removeTransaction(_id:$_id){
+    _id
+  }
+}
+`

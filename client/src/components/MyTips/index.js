@@ -6,7 +6,7 @@ import NavBar from '../NavBar';
 import TipEntry from '../TipModal';
 
 const Calendar = (props) => {
-    const [show, setShow] = useState(false);
+
     const [date, onChange] = useState(new Date());
     const [showModal, setShowModal] = useState(false);
 
@@ -21,7 +21,7 @@ const Calendar = (props) => {
             <div className='calendar'>
                 <ReactCalendar onChange={onChange} tileContent={"pog"} date={date} onClickDay={toggleShowModal} tileContent={``}/>
             </div>
-            {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal} date={date} /> : <></> }
+            {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal}/> : <></> }
             <NavBar/>
         </div>
     )

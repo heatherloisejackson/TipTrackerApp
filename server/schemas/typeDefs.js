@@ -8,6 +8,7 @@ const typeDefs = gql`
   }
 
   type Transaction {
+    _id: ID!
     amount: Float!
     date: String
   }
@@ -26,8 +27,9 @@ const typeDefs = gql`
     login(username: String!, password: String!): Auth
     addTransaction(_id: ID, amount: Float!, date: String): Account
     addAccount(username: String!, password: String!): Auth
+    updateTransaction(_id: ID!, amount: Int!): Transaction
     removeAccount(accountID: ID!): Account
-    removeTransaction(accountID: ID!, transactionId: ID!): Account
+    removeTransaction(_id: ID!): Account
   }
 `;
 
