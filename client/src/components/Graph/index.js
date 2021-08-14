@@ -51,7 +51,7 @@ const Graph = (props) => {
 
           options={{
             title: "Tips per Week",
-            hAxis: { title: moment().format('MMMM Do YYYY'), minValue: 1, maxValue: 7 },
+            hAxis: { title: "", minValue: 1, maxValue: 7 },
             vAxis: { title: "Tips", minValue: 0, maxValue: 100 },
             legend: "none",
           }}
