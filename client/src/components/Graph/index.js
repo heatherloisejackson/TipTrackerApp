@@ -22,18 +22,11 @@ const Graph = (props) => {
   const loadData = () => {
     
     let arraySort = [...data.account.transactions]
-    console.log(arraySort)
-    // const sortedActivities = arraySort.sort((a, b) => a.amount - b.amount)
     const sortedActivities = arraySort.sort((a, b) => a.date.localeCompare(b.date))
-    console.log(sortedActivities)
       obj.push(['date', 'amount'])
       for (let i = 0; i < sortedActivities.length; i++) {
         obj.push([sortedActivities[i].date, sortedActivities[i].amount])
       }
-      // for (let i = 0; i < data.account.transactions.length; i++) {
-      //   obj.push([data.account.transactions[i].date, data.account.transactions[i].amount])
-      // }
-      console.log(obj);
       return obj
   }
 

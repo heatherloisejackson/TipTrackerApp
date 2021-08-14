@@ -26,17 +26,13 @@ const TipEntry = (props) => {
 
   const handleDateClick = (e) => {
     e.preventDefault();
-    console.log();
   };
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
     props.toggleShowModal(false);
-    const id = decode(localStorage.getItem('id_token'))
     const tip = {
-      _id: id.data._id,
       amount: parseFloat(amount),
       date: moment(props.date).format("MM-DD-YYYY")
     }

@@ -43,7 +43,6 @@ const GetNews = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [articles, setArticles] = useState([]);
 
-  console.log(articles);
 
   useEffect(() => {
     fetch(
@@ -53,7 +52,6 @@ const GetNews = () => {
       .then(
         (result) => {
           setIsLoaded(true);
-          console.log(result);
           //   setArticles(result);
           const articleData = result.response.docs.map((article) => ({
             _id: article._id,

@@ -13,8 +13,6 @@ const Calendar = (props) => {
 
 
     const toggleShowModal = (e, value) => {
-        //const newShowModal = !showModal;
-        //console.log('Date:', date)
         setShowModal(!showModal)
     }
 
