@@ -7,7 +7,7 @@ import TipEntry from '../TipModal';
 import moment from 'moment';
 
 const Calendar = (props) => {
-    const [date, onChange] = useState(new Date()/* moment().format("MMM Do YY") */);
+    const [date, onChange] = useState(new Date());
     const [showModal, setShowModal] = useState(false);
 
 
@@ -23,7 +23,7 @@ const Calendar = (props) => {
                 <ReactCalendar onChange={onChange} date={date} onClickDay={toggleShowModal} tileContent={``}/>
             </div>
 
-            {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal} date={date}/* value={value} *//> : <></> }
+            {showModal ? <TipEntry date={date} onChange={onChange} toggleShowModal={toggleShowModal}/> : <></> }
             <NavBar/>
 
         </div>

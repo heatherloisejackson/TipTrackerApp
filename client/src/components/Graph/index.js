@@ -13,13 +13,14 @@ const Graph = (props) => {
   const id = decode(localStorage.getItem('id_token'))
   const _id = id.data._id
   const [showModal, setShowModal] = useState(false);
-  const [date, onChange] = useState(new Date()/* moment().format("MMM Do YY") */);
+  const [transID, setTransID] = useState();
+  const [date, onChange] = useState(new Date());
   const { loading, error, data } = useQuery(QUERY_TRANSACTIONS, {
     variables: { _id },
   });
   var obj = []
 
-  const toggleShowModal = (e, value) => {
+  function toggleShowModal() {
     setShowModal(!showModal)
   }
 
@@ -31,16 +32,34 @@ const Graph = (props) => {
       let arraySort = [...data.account.transactions]
       const sortedActivities = arraySort.sort((a, b) => a.date.localeCompare(b.date))
       obj.push(['date', 'amount'])
-      if (arraySort.length === 0) {
-        obj.push([dateFormat(moment()), 0])
-      }
       for (let i = 0; i < sortedActivities.length; i++) {
-        obj.push([sortedActivities[i].date, sortedActivities[i].amount])
+        if(!(sortedActivities[i].amount === 0)){
+          obj.push([sortedActivities[i].date, sortedActivities[i].amount])
+        }
+      }
+      if ( obj.length == 1 ) {
+        obj.push([dateFormat(moment()), 0])
       }
       return obj
     }
 
     loadData()
+
+    const chartEvents = [
+      {
+        eventName: "select",
+        callback({ chartWrapper }) {
+          const currentSel = chartWrapper.getChart().getSelection()
+          let arraySort = [...data.account.transactions]
+          const sortedActivities = arraySort.sort((a, b) => a.date.localeCompare(b.date))
+          const currentTransactionID = sortedActivities[currentSel[0].row]._id
+          setTransID(currentTransactionID)
+          toggleShowModal()
+        }
+      }
+    ];
+
+
     return (
       <div>
         <div>
@@ -58,8 +77,10 @@ const Graph = (props) => {
               vAxis: { title: "Tips", minValue: 0, maxValue: 100, textPosition: "none" },
               legend: "none",
             }}
+            chartEvents={chartEvents}
             rootProps={{ "data-testid": "1" }}
           />
+          {showModal ? <TipUD date={date} onChange={onChange} toggleShowModal={toggleShowModal} transID={transID}/> : <></> }
         </div>
         <NavBar />
 

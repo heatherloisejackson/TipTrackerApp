@@ -37,7 +37,7 @@ const resolvers = {
       return { token, user };
     },
     addTransaction: async (parent, { _id, amount, date }, context) => {
-      if(!context.user){
+      if (!context.user) {
         throw new AuthenticationError('Not logged in.')
       }
       return Account.findOneAndUpdate(
@@ -51,15 +51,29 @@ const resolvers = {
         }
       );
     },
-    removeAccount: async (parent, { accountID }) => {
-      return Account.findOneAndDelete({ _id: accountID });
+    updateTransaction: async (parent, { _id, amount }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in.')
+      }
+      const result = await Account.updateOne({ _id: context.user._id, "transactions._id": _id }, {
+        $set: { "transactions.$.amount": amount }
+      });
+      return result
     },
-    removeTransaction: async (parent, { accountID }) => {
-      return Account.findOneAndUpdate(
-        { _id: accountID },
-        { $pull: { transaction: { _id: accountID } } },
-        { new: true }
+    removeAccount: async (parent, { }, context) => {
+      return Account.findOneAndDelete({ _id: context.user._id });
+    },
+    removeTransaction: async (parent, { _id }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in.')
+      }
+      const result = await Account.updateOne(
+        { _id: context.user._id },
+        {
+          $pull: { transactions: { _id: _id } }
+        }
       );
+      return result
     },
   },
 };

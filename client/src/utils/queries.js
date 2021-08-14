@@ -7,6 +7,7 @@ query oneAccount($_id: ID!) {
   account(_id: $_id) {
     _id
     transactions {
+      _id
       amount
       date
     }

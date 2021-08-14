@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./index.css";
-import { QUERY_TRANSACTIONS } from "../../utils/queries";
 import { ADD_TRANSACTION } from "../../utils/mutations";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import moment from "moment";
-import decode from 'jwt-decode';
+
 
 const TipEntry = (props) => {
   const { className } = props;
@@ -16,18 +15,12 @@ const TipEntry = (props) => {
 
   const handleChange = (event) => {
     const { value } = event.target;
-
     setAmount(value);
   };
 
   const toggle = () => {
     setModal(!modal);
   };
-
-  const handleDateClick = (e) => {
-    e.preventDefault();
-  };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
