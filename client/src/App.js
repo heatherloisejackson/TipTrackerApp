@@ -7,6 +7,7 @@ import Graph from './components/Graph';
 import GetNews from './components/News';
 import Settings from './components/Settings';
 import NavBar from './components/NavBar';
+import AuthService from './utils/auth';
 
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -24,6 +25,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
