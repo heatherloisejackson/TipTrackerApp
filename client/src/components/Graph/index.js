@@ -23,7 +23,7 @@ const Graph = (props) => {
     
     let arraySort = [...data.account.transactions]
     const sortedActivities = arraySort.sort((a, b) => a.date.localeCompare(b.date))
-      obj.push(['date', 'amount'])
+      obj.push(['', ''])
       for (let i = 0; i < sortedActivities.length; i++) {
         obj.push([sortedActivities[i].date, sortedActivities[i].amount])
       }
@@ -35,17 +35,17 @@ const Graph = (props) => {
     <div>
       <div>
         <Chart
-          width={"100vw"}
+          width={"100%"}
           height={"85vh"}
-          chartType="ScatterChart"
+          chartType="ColumnChart"
           loader={<div>Loading Chart</div>}
-
+          
           data={obj}
 
           options={{
             title: "Tips per Week",
-            hAxis: { title: moment().format('MMMM Do YYYY'), minValue: 1, maxValue: 7 },
-            vAxis: { title: "Tips", minValue: 0, maxValue: 100 },
+            hAxis: { title: moment().format('MMMM Do YYYY'), minValue: 1, maxValue: 7, textPosition: "none" },
+            vAxis: { title: "Tips", minValue: 0, maxValue: 100, textPosition: "none" },
             legend: "none",
           }}
           rootProps={{ "data-testid": "1" }}
