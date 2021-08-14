@@ -42,7 +42,7 @@ const Signup = () => {
     <div className='main-container'>
       <div className="welcome-card">
         <div className="welcome">
-          <h2>Welcome to MooLah</h2>
+          <h2>Welcome To MooLah</h2>
           <h5>Register Here</h5>
         </div>
         <main className="register-card">

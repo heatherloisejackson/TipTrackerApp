@@ -124,7 +124,19 @@ div i {
 
 @media screen and (max-width: 1200px) {
   .main-container {
-    color: blue;
+    
+  }
+
+  .login-card {
+    width: 70vw;
+  }
+
+  .login-card input {
+    width: 60vw;
+  }
+
+  .welcome-card {
+    width: 80vw;
   }
 
   .card {
@@ -141,7 +153,15 @@ div i {
 
 @media screen and (max-width: 600px) {
   .main-container {
-    color: orange;
+    
+  }
+
+  .welcome-card {
+    width: 80vw;
+  }
+
+  .welcome-card h2 {
+    font-size: 4vh;
   }
 
   .card {
@@ -158,7 +178,19 @@ div i {
 
 @media screen and (max-width: 425px) {
   .main-container {
-    color: green;
+  
+  }
+
+  .welcome-card {
+    width: 80vw;
+  }
+
+  .welcome-card h2 {
+    font-size: 4vh;
+  }
+
+  .welcome-card h5 {
+    font-size: 2.5vh;
   }
 
   .card {
@@ -174,15 +206,17 @@ div i {
     height: 4.5vh;
   }
 
-  div .new-here {
-    margin: 2vh 0 0 0;
-    padding: 1vh 0 0 0;
+  div .register {
+    font-size: 2vh;
+    margin: 3.5vh 0 0 0;
+    padding: 2vh 0 0 0;
     height: 6vh;
     width: 70vw;
   }
 
   .submit-btn {
     width: 60vw;
+    font-size: 2vh;
   }
 
   form input,
