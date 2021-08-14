@@ -37,8 +37,11 @@ const resolvers = {
       return { token, user };
     },
     addTransaction: async (parent, { _id, amount, date }, context) => {
+      if(!context.user){
+        throw new AuthenticationError('Not logged in.')
+      }
       return Account.findOneAndUpdate(
-        { _id: _id },
+        { _id: context.user._id },
         {
           $addToSet: { transactions: { amount, date } },
         },
