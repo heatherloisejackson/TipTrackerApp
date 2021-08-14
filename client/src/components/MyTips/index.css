@@ -2,8 +2,14 @@ html {
     background: #F7F3E3;
 }
 .calendar-container {
+    font-family: 'Fredoka One', cursive;
     padding-top: 5vh;
     background: #F7F3E3;
+}
+
+.calendar-container h2 {
+    margin: -2vh 0 0 0;
+    padding: 0 0 3vh 0;
 }
 
 .react-calendar {
@@ -53,7 +59,7 @@ html {
 }
 
 .react-calendar__month-view__days__day--weekend {
-    color: #EDB88B ;
+    color: black ;
 }
 /* DESKTOPS */
 

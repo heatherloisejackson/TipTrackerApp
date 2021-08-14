@@ -14,13 +14,14 @@ button a:visited {
 }
 
 .register-card {
+  margin: 0 0 0 5vw;
   align-self: center;
   height: 20vh;
   width: 30vw;
   border: 1px solid #2e282a;
   border-radius: 5px;
   box-shadow: 0px 1px 5px #2e282a;
-  background-color: #edb88b;
+  background-color: #edb98bae;
 }
 
 .register {
@@ -31,12 +32,12 @@ button a:visited {
   width: 30vw;
   color: #2e282a;
   border: 1px solid #2e282a;
-  margin: 4vh 0 0 0;
+  margin: 5vh 0 0 0;
   padding: 2vh 0 0 0;
   border-radius: 5px;
-  background-color: #f7f3e3;
+  background-color: #f7f3e3ac;
   box-shadow: 0px 1px 5px #2e282a;
-
+  font-weight: 500;
 }
 
 .register a {
