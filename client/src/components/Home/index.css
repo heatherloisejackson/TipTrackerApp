@@ -2,6 +2,7 @@
 /*!  COLOR PALETTE MOOLAH #60935D / #2E282A / #CD5334 / #EDB88B / #F7F3E3 */
 
 .main-container {
+  font-family: 'Rubik', sans-serif;
   color: #2e282a;
   display: flex;
   justify-content: center;
@@ -12,24 +13,46 @@
   background-size: cover;
 }
 
-.welcome {
+.welcome-card {
+  justify-content: center;
   position: absolute;
+  background-color: #2e282aac;
+  top: 20vh;
+  padding: 4vh 0 0 0;
+  height: 50vh;
+  width: 40vw;
+  border-radius: 3px;
+  border: 1px solid black;
+  box-shadow: 0px 3px 8px #000000;
+}
+
+.welcome {
   top: 30vh;
 }
 
 .welcome h2 {
-  color: #2e282a;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.354);
+  font-family: 'Fredoka One', cursive;
+  font-size: 4.5vh;
+  color: #edb98bdd ;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.847);
+ }
+
+.welcome h5 {
+  color: #edb98bdd ;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.847);
+  padding: 0 0 2vh 0;
 }
 
 .login-card {
+  margin: 0 0 0 5vw;
+  justify-content: center;
   align-self: center;
   height: 20vh;
   width: 30vw;
   border: 1px solid #2e282a;
   border-radius: 5px;
   box-shadow: 0px 1px 5px #2e282a;
-  background-color: #edb88b;
+  background-color: #edb98bae;
 }
 
 form {
@@ -50,6 +73,7 @@ input:focus {
 }
 
 .submit-btn {
+  font-weight: 500;
   height: 5vh;
   width: 28vw;
   border-radius: 5px;
@@ -67,21 +91,6 @@ div i {
 .password {
   padding: 1vh 0;
 }
-
-/* .register {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 6vh;
-  width: 30vw;
-  color: #2e282a;
-  border: 1px solid #2e282a;
-  margin: 4vh 0 0 0;
-  padding: 2vh 0 0 0;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px #2e282a;
-  background-color: #f7f3e3;
-} */
 
 .new-here {
   width: 30vw;
@@ -104,7 +113,7 @@ div i {
   color: #2e282a;
   text-decoration: none;
   padding: 0 0 0 0.5vw;
-
+  font-weight: 500;
 }
 
 .new-here a:hover {
@@ -115,7 +124,19 @@ div i {
 
 @media screen and (max-width: 1200px) {
   .main-container {
-    color: blue;
+    
+  }
+
+  .login-card {
+    width: 70vw;
+  }
+
+  .login-card input {
+    width: 60vw;
+  }
+
+  .welcome-card {
+    width: 80vw;
   }
 
   .card {
@@ -132,7 +153,15 @@ div i {
 
 @media screen and (max-width: 600px) {
   .main-container {
-    color: orange;
+    
+  }
+
+  .welcome-card {
+    width: 80vw;
+  }
+
+  .welcome-card h2 {
+    font-size: 4vh;
   }
 
   .card {
@@ -149,7 +178,19 @@ div i {
 
 @media screen and (max-width: 425px) {
   .main-container {
-    color: green;
+  
+  }
+
+  .welcome-card {
+    width: 80vw;
+  }
+
+  .welcome-card h2 {
+    font-size: 4vh;
+  }
+
+  .welcome-card h5 {
+    font-size: 2.5vh;
   }
 
   .card {
@@ -165,15 +206,17 @@ div i {
     height: 4.5vh;
   }
 
-  div .new-here {
-    margin: 2vh 0 0 0;
-    padding: 1vh 0 0 0;
+  div .register {
+    font-size: 2vh;
+    margin: 3.5vh 0 0 0;
+    padding: 2vh 0 0 0;
     height: 6vh;
     width: 70vw;
   }
 
   .submit-btn {
     width: 60vw;
+    font-size: 2vh;
   }
 
   form input,

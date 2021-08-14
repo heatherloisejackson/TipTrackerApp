@@ -66,7 +66,8 @@ const TipEntry = (props) => {
             {/*//? when onClick is uncommented 'Submit Tips' will not log to console but now modal will not close until 'Exit' BTN is clicked */}
             <Button
               color="primary"
-              type="submit" /* onClick={props.toggleShowModal} */
+              type="submit" 
+              className="tip-submit-btn"
             >
               Submit Tips
             </Button>
