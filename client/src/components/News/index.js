@@ -47,7 +47,7 @@ const GetNews = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name:("Your Money")&sort=newest&api-key=${NYT_APIKEY}`
+      `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name:("Your Money")&sort=newest&api-key=bSAhQ4HUGXtpkH7xVjlrgXALMEWxr35z`
     )
       .then((res) => res.json())
       .then(
