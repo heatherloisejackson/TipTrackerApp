@@ -161,16 +161,16 @@ const Settings = () => {
             Unniversity of Pennsylvania's Full Stack Coding Bootcamp. Feel free to reach out to them!
           </Typography>
           <Typography>
-            <a href = "https://github.com/alexbradshaw">Alex Bradshaw</a>
+            <a href = "https://github.com/alexbradshaw" target="_blank">Alex Bradshaw</a>
           </Typography>
           <Typography>
-            <a href = "https://github.com/mdis928">Michael DiSanto</a>
+            <a href = "https://github.com/mdis928" target="_blank">Michael DiSanto</a>
           </Typography>
           <Typography>
-            <a href = "https://github.com/heatherloisejackson">Heather Jackson</a>
+            <a href = "https://github.com/heatherloisejackson" target="_blank">Heather Jackson</a>
           </Typography>
           <Typography>
-            <a href = "https://github.com/gamgee-em">Sam Sweigart</a>
+            <a href = "https://github.com/gamgee-em" target="_blank">Sam Sweigart</a>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -190,7 +190,7 @@ const Settings = () => {
             Check out the GitHub Repo for this application by clicking the icon below and feel free to contact us if you are interested in contributing.
           </Typography>
           <Typography>
-            <a href = "https://github.com/heatherloisejackson/TipTrackerApp"><GitHubIcon/></a>
+            <a href = "https://github.com/heatherloisejackson/TipTrackerApp" target="_blank"><GitHubIcon/></a>
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -1,3 +1,9 @@
+.main-container {
+  color: #2e282a;
+  display: flex;
+  height: 100vh;
+}
+
 button a {
   text-decoration: none;
 }
@@ -16,18 +22,21 @@ button a:visited {
   box-shadow: 0px 1px 5px #2e282a;
   background-color: #edb88b;
 }
+
 .register {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6vh;
+  /* height: 6vh; */
   width: 30vw;
   color: #2e282a;
   border: 1px solid #2e282a;
   margin: 4vh 0 0 0;
   padding: 2vh 0 0 0;
   border-radius: 5px;
-  box-shadow: 0 1px 5px #2e282a;
+  background-color: #f7f3e3;
+  box-shadow: 0px 1px 5px #2e282a;
+
 }
 
 .register a {
@@ -38,4 +47,23 @@ button a:visited {
 
 .register a:hover {
   color: grey;
+}
+
+@media screen and (max-width: 425px) {
+
+  .register-card {
+    width: 70vw;
+  }
+
+  .register-card input {
+    width: 60vw;
+    height: 4.5vh;
+  }
+
+  .register {
+    margin: 2vh 0 0 0;
+    padding: 2.5vh 0 0 0;
+    height: 6vh;
+    width: 70vw;
+  }
 }
