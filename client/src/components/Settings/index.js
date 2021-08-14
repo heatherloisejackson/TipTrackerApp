@@ -1,6 +1,6 @@
 import "./index.css";
 import NavBar from "../NavBar";
-import React from "react";
+// import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -11,6 +11,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import Button from '@material-ui/core/Button';
 import AuthService from "../../utils/auth";
 import decode from 'jwt-decode';
+import React, { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +36,21 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
+
+
 const Settings = () => {
+
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
+
+//   const [theme, themeSwitch] = React.useState(false);
+  
+//   const switchTheme = (e, value) => {
+//     themeSwitch(!theme)
+//     console.log(theme)
+// }
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -105,8 +120,13 @@ const Settings = () => {
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+            <div className="theme" data-theme={darkMode? "dark" : "light"}>
+              <button onClick={toggleDarkMode}>Toggle Dark Mode
+              </button>
+            </div>
+            
+          
+      
           </Typography>
         </AccordionDetails>
       </Accordion>

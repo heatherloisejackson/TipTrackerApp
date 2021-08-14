@@ -52,7 +52,7 @@ function App() {
             <GetNews />
           </Route>
           <Route exact path='/settings'>
-            <Settings />
+            <Settings  />
           </Route>
         </Switch>
       </div>
