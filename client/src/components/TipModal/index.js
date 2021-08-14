@@ -78,6 +78,7 @@ const TipEntry = (props) => {
             <Button
               color="primary"
               type="submit" /* onClick={props.toggleShowModal} */
+              className="tip-submit-btn"
             >
               Submit Tips
             </Button>
