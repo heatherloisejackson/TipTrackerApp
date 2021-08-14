@@ -50,6 +50,40 @@ button a:visited {
   color: grey;
 }
 
+@media screen and (max-width: 1200px) {
+  .main-container {
+    
+  }
+
+  .register-card  {
+    width: 70vw;
+  }
+
+  .register-card input {
+    width: 60vw;
+  }
+
+  .submit-btn {
+    width: 60vw;
+  }
+  .register {
+    width: 70vw;
+  }
+
+  /* .welcome-card {
+    width: 80vw;
+  } */
+
+  .card {
+    min-width: 400px;
+  }
+
+  form input,
+  button {
+    min-width: 350px;
+  }
+}
+
 @media screen and (max-width: 425px) {
 
   .register-card {
