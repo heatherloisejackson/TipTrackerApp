@@ -8,6 +8,8 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import GitHubIcon from '@material-ui/icons/GitHub';
+import Button from '@material-ui/core/Button';
+import AuthService from "../../utils/auth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -202,11 +204,12 @@ const Settings = () => {
           id="panel7bh-header"
         >
           <Typography className={classes.heading}>Logout</Typography>
+          <Button onClick={() => {AuthService.logout()}} variant="contained" color="secondary">
+              Logout 
+            </Button>
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
           </Typography>
         </AccordionDetails>
       </Accordion>
