@@ -68,7 +68,7 @@ div i {
   padding: 1vh 0;
 }
 
-.register {
+/* .register {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,6 +81,17 @@ div i {
   border-radius: 5px;
   box-shadow: 0 1px 5px #2e282a;
   background-color: #f7f3e3;
+} */
+
+.new-here {
+  width: 30vw;
+  border: 1px solid #2e282a;
+  color: #2e282a;
+  background-color: #f7f3e3;
+  margin: 4vh 0 0 0;
+  padding: 2vh 0 0 0;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px #2e282a;
 }
 
 .register a {
@@ -89,7 +100,14 @@ div i {
   padding: 0 0 0 0.25vw;
 }
 
-.register a:hover {
+.new-here a {
+  color: #2e282a;
+  text-decoration: none;
+  padding: 0 0 0 0.5vw;
+
+}
+
+.new-here a:hover {
   color: grey;
 }
 
@@ -136,6 +154,26 @@ div i {
 
   .card {
     min-width: 265px;
+  }
+
+  .login-card {
+    width: 70vw;
+  }
+  
+  .login-card input {
+    width: 60vw;
+    height: 4.5vh;
+  }
+
+  div .new-here {
+    margin: 2vh 0 0 0;
+    padding: 1vh 0 0 0;
+    height: 6vh;
+    width: 70vw;
+  }
+
+  .submit-btn {
+    width: 60vw;
   }
 
   form input,

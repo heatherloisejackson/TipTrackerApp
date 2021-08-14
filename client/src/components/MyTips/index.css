@@ -1,7 +1,10 @@
+html {
+    background: #F7F3E3;
+}
 .calendar-container {
     padding-top: 5vh;
+    background: #F7F3E3;
 }
-
 
 .react-calendar {
     font-size: 1rem;
@@ -20,6 +23,38 @@
     height: 70vh;
 }
 
+.react-calendar__tile--now {
+    color: black;
+    background: #EDB88B;
+}
+
+.react-calendar__tile--now:enabled:hover, 
+.react-calendar__tile--now:enabled:focus {
+    background: #e6e6e6;
+}
+
+.react-calendar__tile--active {
+    background-color: #60935D;
+}
+
+.react-calendar__tile--active:enabled:hover, 
+.react-calendar__tile--active:enabled:focus {
+    background-color: #60935D;
+}
+
+.close {
+    display: none;
+}
+
+.react-calendar abbr[title], abbr[data-bs-original-title] {
+    text-decoration: none;
+    cursor: default;
+    text-decoration-skip-ink: none;
+}
+
+.react-calendar__month-view__days__day--weekend {
+    color: #EDB88B ;
+}
 /* DESKTOPS */
 
 @media screen and (min-width: 1200px) {
@@ -32,11 +67,11 @@
 
 @media screen and (max-width: 1200px) {
     .calendar-container {
-        padding-top: 0;
+        padding-top: 4vh;
     }
     
-    .calendar {
-        color: blue;
+    .calendar-container h2 {
+        margin: -1vh 0 1vh 0;
     }
 
     .react-calendar {
@@ -47,7 +82,7 @@
 
     .react-calendar__month-view__days {
         flex-wrap: wrap;
-        height: 75vh;
+        height: 70vh;
     }
     form input, button {
         min-width: 20px;
@@ -63,7 +98,6 @@
     }
 
     .calendar {
-        color: orange;
         top: 3vh;
     }
 
@@ -76,15 +110,11 @@
 
 @media screen and (max-width: 465px) {
     .calendar-container {
-        padding-top: 0;
-    }
-
-    .calendar {
-        color: green;
+        padding-top: 1vh;
     }
 
     .react-calendar {
-        height: 85vh;
+        height: 82vh;
         width: 100vw;
     }
 

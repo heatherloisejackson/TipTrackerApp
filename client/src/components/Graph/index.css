@@ -11,6 +11,20 @@ circle:nth-child(even) {
     r: 7.5;
 }
 
+rect {
+    fill: rgb(247,243,227);
+}
+
+g rect {
+    fill: #2E282A;
+}
+
+/* hides first child */
+/* circle:nth-child(1){
+    fill: rgba(255, 255, 255, 0);
+    cx: 200vw;
+} */
+
 text:nth-child(odd){
     font-weight: bold;
 }
