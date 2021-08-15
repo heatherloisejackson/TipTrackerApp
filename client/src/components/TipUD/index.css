@@ -1,13 +1,23 @@
-
-.tip-submit-btn {
+.tip-delete-btn {
     color: #fff;
-    background-color: #60935D;
-    border-color: #6c757d;
+    background-color: #EDB88B;
 }
 
-.tip-entry {
-    width: 20vw;
+.tip-delete-btn:active,
+.tip-delete-btn:focus,
+.tip-delete-btn:hover {
+    color: #fff;
+    background-color: #EDB88B;
+    border-color:#6c757d;
+    box-shadow: 1px 1px 5px #6c757d;
 }
+
+.btn-danger {
+    color: #fff;
+    background-color: #EDB88B;
+    border-color: #F7F3E3;
+}
+
 .modal-dialog {
     padding: 20vh 0 0 0;
 }
