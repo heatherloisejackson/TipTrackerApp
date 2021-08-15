@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Settings = () => {
 
-  const [darkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
+  // const [darkMode, setDarkMode] = useState(false);
+  // const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
 
 //   const [theme, themeSwitch] = React.useState(false);
   
@@ -120,10 +120,10 @@ const Settings = () => {
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>
-            <div className="theme" data-theme={darkMode? "dark" : "light"}>
+            {/* <div className="theme" data-theme={darkMode? "dark" : "light"}>
               <button onClick={toggleDarkMode}>Toggle Dark Mode
               </button>
-            </div>
+            </div> */}
             
           
       
