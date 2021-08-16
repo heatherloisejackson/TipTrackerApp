@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Settings = () => {
+<<<<<<< HEAD
   const decoded = decode(localStorage.getItem('id_token'))
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
@@ -50,6 +51,11 @@ const Settings = () => {
       _id: decoded.data._id
     }
   })
+=======
+
+  // const [darkMode, setDarkMode] = useState(false);
+  // const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
+>>>>>>> 37775ed5dacf5950a3fed945b0ed587ecb9e7984
 
 const deleteAccount = () => {
   try{
@@ -129,10 +135,10 @@ const deleteAccount = () => {
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>
-            <div className="theme" data-theme={darkMode? "dark" : "light"}>
+            {/* <div className="theme" data-theme={darkMode? "dark" : "light"}>
               <button onClick={toggleDarkMode}>Toggle Dark Mode
               </button>
-            </div>
+            </div> */}
             
           
       

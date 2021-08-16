@@ -62,7 +62,7 @@ const Graph = (props) => {
 
     return (
       <div>
-        <div>
+        <div className='format'>
           <Chart
             width={"100%"}
             height={"85vh"}
@@ -72,10 +72,14 @@ const Graph = (props) => {
             data={obj}
 
             options={{
-              title: "Tips per Week",
-              hAxis: { title: moment().format('MMMM Do YYYY'), minValue: 1, maxValue: 7, textPosition: "none" },
+              title: "My Tips",
+              backgroundColor: "#F7F3E3",
+              fontName: 'Fredoka One',
+              fontSize: '25',
+              hAxis: { title: 'Tips Timeline', minValue: 1, maxValue: 7, textPosition: "none" },
               vAxis: { title: "Tips", minValue: 0, maxValue: 100, textPosition: "none" },
               legend: "none",
+              colors: ['#CD5334', '#EDB88B'],
             }}
             chartEvents={chartEvents}
             rootProps={{ "data-testid": "1" }}
