@@ -14,7 +14,7 @@ A Full-Stack MERN application that allows users to create an account to track ti
 * [Contact Information](#questions)
 * [Live Application](#application)
 ## __Dependencies__
-    React / react-router-dom  
+    react / react-router-dom / graphQL / apollo-server-express / express / mongoose /
 ## __Tests__
     No tests provided.
 ## __Installation__
@@ -29,9 +29,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## __Badges__
 [![License: MIT](https://img.shields.io/badge/License-MIT-hotpink.svg)](https://opensource.org/licenses/MIT)
 ## __GIF__
+![Application Demo](client/public/tip-tracker-app.gif)
 
 # __Screenshots__
-
 
 ## __Contributors__
 * Alex Bradshaw
@@ -45,4 +45,4 @@ If you would like to contribute to the project please contact one of the team me
 * [Heather Jackson](mailto:heatherloisejackson@gmail.com)
 * [Sam Sweigart](mailto:samuel.sweigart@gmail.com)
 # __Application__
-<a href='https://moolah-tip-tracker.herokuapp.com/'>Click to view deployed application</a>
+<a href='https://moolah-tip-tracker.herokuapp.com/' target="_blank">Click to view deployed application</a>
