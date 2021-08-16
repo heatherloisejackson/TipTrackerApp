@@ -66,7 +66,7 @@ const Graph = (props) => {
         <div className='format'>
           <Chart
             width={'100%'}
-            height={'85vh'}
+            height={'95vh'}
             chartType='ColumnChart'
             loader={<div>Loading Chart</div>}
             data={obj}

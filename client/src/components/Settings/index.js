@@ -100,19 +100,19 @@ const Settings = () => {
           <Typography className={classes.heading}>Your Account</Typography>
           <Typography className={classes.secondaryHeading}>
             {decoded.data.username}{" "}
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails className={classes.details}>
+          <Typography>
             <Button
               onClick={() => {
                 deleteAccount();
               }}
               variant="contained"
-              color="secondary"
             >
               Delete Account
             </Button>
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails className={classes.details}>
-          <Typography></Typography>
+            </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion
@@ -156,7 +156,7 @@ const Settings = () => {
           </Typography>
           <Typography>
             <a href="mailto: heatherloisejackson@gmail.com">
-              Support@MoolahTipTracker.com
+              Support@Moolah.com
             </a>
           </Typography>
         </AccordionDetails>
@@ -241,7 +241,10 @@ const Settings = () => {
           id="panel7bh-header"
         >
           <Typography className={classes.heading}>Logout</Typography>
-          <Button
+          
+        </AccordionSummary>
+        <AccordionDetails className={classes.details}>
+          <Typography><Button
             onClick={() => {
               AuthService.logout();
             }}
@@ -249,10 +252,7 @@ const Settings = () => {
             color="secondary"
           >
             Logout
-          </Button>
-        </AccordionSummary>
-        <AccordionDetails className={classes.details}>
-          <Typography></Typography>
+          </Button></Typography>
         </AccordionDetails>
       </Accordion>
       <NavBar />
