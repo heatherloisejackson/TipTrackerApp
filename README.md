@@ -10,7 +10,6 @@ A Full-Stack MERN application that allows users to create an account to track ti
 * [Badges](#badges)
 * [GIF](#gif)
 * [Screenshots](#screenshots)
-* [Lighthouse](#lighthouse)
 * [Contributors](#contributors)
 * [Contact Information](#questions)
 * [Live Application](#application)
@@ -33,8 +32,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # __Screenshots__
 
-# __Lighthouse__
-
 
 ## __Contributors__
 * Alex Bradshaw
@@ -43,9 +40,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Sam Sweigart
 ## __Questions__
 If you would like to contribute to the project please contact one of the team members below: 
-* [Alex Bradshaw](mailto:)
+* [Alex Bradshaw](mailto:alexanderbradshaw5@gmail.com)
 * [Mike DiSanto](mailto:mdisanto928@gmail.com)
-* [Heather Jackson](mailto:)
+* [Heather Jackson](mailto:heatherloisejackson@gmail.com)
 * [Sam Sweigart](mailto:samuel.sweigart@gmail.com)
 # __Application__
-<a href=''>Click to view deployed application</a>
+<a href='https://moolah-tip-tracker.herokuapp.com/'>Click to view deployed application</a>
