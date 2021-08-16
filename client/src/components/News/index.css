@@ -1,3 +1,7 @@
+#custom-height {
+  height: 250px;
+}
+
 ol {
   list-style: none;
 }
@@ -24,7 +28,23 @@ li {
     flex-direction: column-reverse;
     align-content: center;
     overflow-y: hidden;
+    flex-wrap: nowrap;
+    width: 400px;
   }
+  #response-height {
+    height: 100px;
+  }
+  ol {
+    margin: 0 50px 0 0;
+    padding: 0;
+  }
+  #date-width{
+    padding: 0;
+  }
+  #text-width{
+    padding: 0;
+  }
+
 }
 
 /* LARGE CELLPHONES */
@@ -35,6 +55,24 @@ li {
   .flex {
     flex-direction: column-reverse;
     align-content: center;
+    flex-wrap: nowrap;
+    width: 120%;
+  }
+  .MuiGrid-container {
+    flex-wrap: nowrap;
+  }
+  .makeStyles-root-18 {
+    height: fit-content;
+  }
+  ol {
+    margin: 0 50px 0 0;
+    padding: 0;
+  }
+  #date-width{
+    padding: 0;
+  }
+  #text-width{
+    padding: 0;
   }
 }
 
@@ -47,5 +85,28 @@ li {
   .flex {
     flex-direction: column-reverse;
     align-content: center;
+    flex-wrap: nowrap;
+    width: 120%;
   }
+  .MuiGrid-container {
+    flex-wrap: nowrap;
+  }
+  .makeStyles-root-18 {
+    height: fit-content;
+  }
+  ol {
+    margin: 0 50px 0 -50px;
+    padding: 0;
+  }
+  #date-width{
+    padding: 0;
+  }
+  #text-width{
+    padding: 0;
+    max-width: 240px;
+  }
+  /* .NYT {
+    height: 70px;
+    width: 150px;
+  } */
 }

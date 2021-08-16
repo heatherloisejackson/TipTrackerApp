@@ -14,8 +14,9 @@ import moment from "moment";
 import header from "./assets/news_header.png";
 import banner from "./assets/news_banner.png";
 
-import "./index.css";
+
 import NavBar from "../NavBar";
+import "./index.css";
 
 const NYT_APIKEY = require("./config");
 
@@ -23,11 +24,10 @@ const useStyles = makeStyles({
   root: {
     minWidth: 275,
     flexGrow: 1,
-    height: 250,
     boxShadow: "none",
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
   },
   pos: {
     marginBottom: 12,
@@ -88,13 +88,14 @@ const GetNews = () => {
         <Grid container spacing={0}>
           <Grid item xs={4}></Grid>
           <Grid item xs={4}>
-            <CardMedia component="img" src={header} alt="New York Times" />
+            <CardMedia className="NYT" component="img" src={header} alt="New York Times"/>
           </Grid>
           <Grid item xs={4}></Grid>
         </Grid>
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <CardMedia
+              className="latest"
               component="img"
               image={banner}
               alt="Latest articles from 'Your Money'"
@@ -107,16 +108,16 @@ const GetNews = () => {
               <Grid container spacing={0} className="flex">
                 <Grid item xs={1}></Grid>
                 <Grid item xs={1}>
-                  <Card className={classes.root}>
-                    <CardContent>
-                      <Typography className={classes.title} gutterBottom>
+                  <Card className={classes.root} id="date-width">
+                    <CardContent className="box">
+                      <Typography className={classes.title} id="custom-height response-height" gutterBottom>
                         {article.pub_date}
                       </Typography>
                     </CardContent>
                   </Card>
                 </Grid>
                 <Grid item xs={6}>
-                  <Card className={classes.root}>
+                  <Card className={classes.root} id="text-width">
                     <CardContent>
                       <Typography
                         className={classes.title}
