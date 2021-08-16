@@ -1,3 +1,5 @@
+// UPDATE AND DELETE TIPS
+
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
@@ -13,9 +15,9 @@ const TipUD = (props) => {
   const [transactionID, setTransactionID] = useState(props.transID);
   const [removeTransaction] = useMutation(REMOVE_TRANSACTION, {
     variables: {
-      _id: props.transID
-    }
-  })
+      _id: props.transID,
+    },
+  });
 
   const handleChange = (event) => {
     const { value } = event.target;
@@ -26,32 +28,31 @@ const TipUD = (props) => {
     setModal(!modal);
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     props.toggleShowModal(false);
     const tip = {
       _id: transactionID,
       amount: parseFloat(amount),
-    }
+    };
     try {
       const { data } = await updateTransaction({
-        variables: tip ,
+        variables: tip,
       });
     } catch (error) {
       console.error(error);
     }
-    window.location.reload()
+    window.location.reload();
   };
 
   const deleteTransaction = () => {
-    try{
-      removeTransaction()
-    } catch(err){
+    try {
+      removeTransaction();
+    } catch (err) {
       console.error(err);
     }
-    window.location.reload()
-  }
+    window.location.reload();
+  };
 
   return (
     <div>
@@ -78,18 +79,13 @@ const TipUD = (props) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button
-              color="primary"
-              type="submit"
-              className="tip-submit-btn" 
-            >
+            <Button color="primary" type="submit" className="tip-submit-btn">
               Update Tip
             </Button>
             <Button
               color="danger"
               onClick={deleteTransaction}
-              className="tip-delete-btn" 
-
+              className="tip-delete-btn"
             >
               Delete Tip
             </Button>

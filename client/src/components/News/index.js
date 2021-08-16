@@ -1,3 +1,5 @@
+// 'NEWS' PAGE
+
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -43,7 +45,6 @@ const GetNews = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [articles, setArticles] = useState([]);
 
-
   useEffect(() => {
     fetch(
       `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name:("Your Money")&sort=newest&api-key=bSAhQ4HUGXtpkH7xVjlrgXALMEWxr35z`
@@ -84,7 +85,6 @@ const GetNews = () => {
   } else {
     return (
       <div className="news">
-
         <Grid container spacing={0}>
           <Grid item xs={4}></Grid>
           <Grid item xs={4}>
@@ -141,7 +141,11 @@ const GetNews = () => {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button size="small" href={article.web_url} target="_blank">
+                      <Button
+                        size="small"
+                        href={article.web_url}
+                        target="_blank"
+                      >
                         Read more
                       </Button>
                     </CardActions>
@@ -160,7 +164,7 @@ const GetNews = () => {
             </li>
           ))}
         </ol>
-        <NavBar/>
+        <NavBar />
       </div>
     );
   }

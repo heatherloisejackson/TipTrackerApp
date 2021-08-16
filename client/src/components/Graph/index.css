@@ -1,6 +1,5 @@
 /* DESKTOPS */
 
-
 /* rect:nth-child(odd) {
     fill: #CD5334 ;
 } */
@@ -35,13 +34,12 @@ circle:nth-child(even) {
     d:  50;
 } */
 
-
 /* rect {
     fill: rgb(247,243,227);
 } */
 
 /* g rect { */
-    /* fill: #2E282A; */
+/* fill: #2E282A; */
 /* } */
 
 /* hides first child */
@@ -50,41 +48,40 @@ circle:nth-child(even) {
     cx: 200vw;
 } */
 
-text:nth-child(odd){
-    font-weight: bold;
+text:nth-child(odd) {
+  font-weight: bold;
 }
 
-
 @media screen and (min-width: 1200px) {
-    .graph {
-        color: black;
-    }
+  .graph {
+    color: black;
+  }
 }
 
 /* TABLETS */
 
 @media screen and (max-width: 1200px) {
-    .graph {
-        color: blue;
-    }
+  .graph {
+    color: blue;
+  }
 }
 
 /* LARGE CELLPHONES */
 
 @media screen and (max-width: 600px) {
-    .graph {
-        color: orange;
-    }
+  .graph {
+    color: orange;
+  }
 }
 
 /* SMALL CELLPHONES */
 
 @media screen and (max-width: 465px) {
-    .graph {
-        color: green;
-    }
+  .graph {
+    color: green;
+  }
 }
 
 .graph {
-    background-color: blue;
+  background-color: blue;
 }

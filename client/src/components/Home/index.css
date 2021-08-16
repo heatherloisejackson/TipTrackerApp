@@ -2,7 +2,7 @@
 /*!  COLOR PALETTE MOOLAH #60935D / #2E282A / #CD5334 / #EDB88B / #F7F3E3 */
 
 .main-container {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   color: #2e282a;
   display: flex;
   justify-content: center;
@@ -31,14 +31,14 @@
 }
 
 .welcome h2 {
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
   font-size: 4.5vh;
-  color: #edb98bdd ;
+  color: #edb98bdd;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.847);
- }
+}
 
 .welcome h5 {
-  color: #edb98bdd ;
+  color: #edb98bdd;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.847);
   padding: 0 0 2vh 0;
 }
@@ -123,9 +123,8 @@ div i {
 /* TABLETS */
 
 @media screen and (max-width: 1200px) {
-  .main-container {
-    
-  }
+  /* .main-container {
+  } */
 
   .login-card {
     width: 70vw;
@@ -152,9 +151,8 @@ div i {
 /* LARGE CELLPHONES */
 
 @media screen and (max-width: 600px) {
-  .main-container {
-    
-  }
+  /* .main-container {
+  } */
 
   .welcome-card {
     width: 80vw;
@@ -177,9 +175,8 @@ div i {
 /* SMALL CELLPHONES */
 
 @media screen and (max-width: 425px) {
-  .main-container {
-  
-  }
+  /* .main-container {
+  } */
 
   .welcome-card {
     width: 80vw;
@@ -200,7 +197,7 @@ div i {
   .login-card {
     width: 70vw;
   }
-  
+
   .login-card input {
     width: 60vw;
     height: 4.5vh;

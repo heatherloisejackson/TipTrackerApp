@@ -17,8 +17,8 @@ const useStyles = makeStyles({
     bottom: 0,
     top: "auto",
     backgroundColor: "#60935D",
-    color: '#F7F3E3',
-    position: 'fixed'
+    color: "#F7F3E3",
+    position: "fixed",
   },
   grow: {
     flexGrow: 1,
@@ -30,21 +30,21 @@ const useStyles = makeStyles({
     left: 0,
     right: 0,
     margin: "0 auto",
-    color: '#F7F3E3',
-    backgroundColor: '#2E282A',
-    '&:hover': {
-        backgroundColor: '#CD5334'
-      }
+    color: "#F7F3E3",
+    backgroundColor: "#2E282A",
+    "&:hover": {
+      backgroundColor: "#CD5334",
+    },
   },
   iconColor: {
-    color: '#F7F3E3',
-    fontWeight: 'bold',
+    color: "#F7F3E3",
+    fontWeight: "bold",
   },
   label: {
     color: "#F7F3E3",
-    '&:hover': {
-        color: '#2E282A'
-      }
+    "&:hover": {
+      color: "#2E282A",
+    },
   },
 });
 
@@ -61,15 +61,43 @@ const NavBar = () => {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction className={classes.label} label="Home" icon={<HomeIcon className={classes.iconColor}/>} value="MyTips" component={Link} to={"MyTips"}/>
-      <BottomNavigationAction className={classes.label} label="Stats" icon={<EqualizerIcon className={classes.iconColor}/>} value="Graph" component={Link} to={"Graph"}/>
+      <BottomNavigationAction
+        className={classes.label}
+        label="Home"
+        icon={<HomeIcon className={classes.iconColor} />}
+        value="MyTips"
+        component={Link}
+        to={"MyTips"}
+      />
+      <BottomNavigationAction
+        className={classes.label}
+        label="Stats"
+        icon={<EqualizerIcon className={classes.iconColor} />}
+        value="Graph"
+        component={Link}
+        to={"Graph"}
+      />
 
       <Fab color="secondary" aria-label="add" className={classes.fabButton}>
         <AddIcon />
       </Fab>
 
-      <BottomNavigationAction className={classes.label} label="News" icon={<MenuBookIcon className={classes.iconColor}/>} value="News" component={Link} to={"News"}/>
-      <BottomNavigationAction className={classes.label} label="Settings" icon={<SettingsIcon className={classes.iconColor}/>} value="Settings" component={Link} to={"Settings"}/>
+      <BottomNavigationAction
+        className={classes.label}
+        label="News"
+        icon={<MenuBookIcon className={classes.iconColor} />}
+        value="News"
+        component={Link}
+        to={"News"}
+      />
+      <BottomNavigationAction
+        className={classes.label}
+        label="Settings"
+        icon={<SettingsIcon className={classes.iconColor} />}
+        value="Settings"
+        component={Link}
+        to={"Settings"}
+      />
     </BottomNavigation>
   );
 };
