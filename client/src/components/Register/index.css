@@ -51,11 +51,10 @@ button a:visited {
 }
 
 @media screen and (max-width: 1200px) {
-  .main-container {
-    
-  }
+  /* .main-container {
+  } */
 
-  .register-card  {
+  .register-card {
     width: 70vw;
   }
 
@@ -85,7 +84,6 @@ button a:visited {
 }
 
 @media screen and (max-width: 425px) {
-
   .register-card {
     width: 70vw;
   }

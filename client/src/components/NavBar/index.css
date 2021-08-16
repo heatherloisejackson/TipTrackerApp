@@ -1,62 +1,62 @@
 nav a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 nav a:hover {
-    color: grey;
-    text-decoration: none;
+  color: grey;
+  text-decoration: none;
 }
 
 .Mui-selected {
-    color: #2E282A;
+  color: #2e282a;
 }
 
-a:hover{
-    color: #2E282A;
+a:hover {
+  color: #2e282a;
 }
 
 .MuiFab-secondary:hover {
-    background-color: #CD5334;
+  background-color: #cd5334;
 }
 
 @media screen and (min-width: 1200px) {
-    nav {
-        display: flex;
-        justify-content: space-evenly;
-        position: absolute; 
-        width: 100vw;
-        top: 2vh;
-    }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100vw;
+    top: 2vh;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    nav {
-        display: flex;
-        justify-content: space-evenly;
-        position: fixed;
-        width: 100vw;
-        bottom: 2vh;
-        font-size: 2vh;
-    }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100vw;
+    bottom: 2vh;
+    font-size: 2vh;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    nav {
-        display: flex;
-        justify-content: space-evenly;
-        position: fixed;
-        width: 100vw;
-        bottom: 1vh;
-    }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100vw;
+    bottom: 1vh;
+  }
 }
 
 @media screen and (max-width: 425px) {
-    nav {
-        display: flex;
-        justify-content: space-evenly;
-        position: fixed;
-        width: 100vw;
-        bottom: 2vh;
-    }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100vw;
+    bottom: 2vh;
+  }
 }

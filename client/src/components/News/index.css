@@ -1,51 +1,51 @@
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 li {
-    text-align: left;
+  text-align: left;
 }
 
 /* DESKTOP */
 
 @media screen and (min-width: 1200px) {
-    .news {
-        color: black;
-    }
+  .news {
+    color: black;
+  }
 }
 
 /* TABLETS */
 
 @media screen and (max-width: 1200px) {
-    .news {
-        color: blue;
-    } 
-    .flex {
-        flex-direction: column-reverse;
-        align-content: center;
-        overflow-y: hidden;
-    } 
+  .news {
+    color: blue;
+  }
+  .flex {
+    flex-direction: column-reverse;
+    align-content: center;
+    overflow-y: hidden;
+  }
 }
 
 /* LARGE CELLPHONES */
 @media screen and (max-width: 600px) {
-    .news {
-        color: orange;
-    }
-    .flex {
-        flex-direction: column-reverse;
-        align-content: center;
-    }
+  .news {
+    color: orange;
+  }
+  .flex {
+    flex-direction: column-reverse;
+    align-content: center;
+  }
 }
 
 /* SMALL CELLPHONES */
 
 @media screen and (max-width: 465px) {
-    .news {
-        color: green;
-    }
-    .flex {
-        flex-direction: column-reverse;
-        align-content: center;
-    }
+  .news {
+    color: green;
+  }
+  .flex {
+    flex-direction: column-reverse;
+    align-content: center;
+  }
 }

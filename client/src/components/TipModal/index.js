@@ -1,3 +1,5 @@
+// ADD-TIP MODEL COMPONENT
+
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";

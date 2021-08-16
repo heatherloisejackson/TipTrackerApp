@@ -1,6 +1,5 @@
 .MuiAccordionDetails-root {
-    padding: 8px 16px 16px 33.3%;
-
+  padding: 8px 16px 16px 33.3%;
 }
 
 /* DESKTOPS */
@@ -35,10 +34,8 @@
   }
 }
 
-
-
 [data-theme="dark"] {
-  --bg-color: #3F3F3F;
+  --bg-color: #3f3f3f;
   --text-color: #fff;
 }
 

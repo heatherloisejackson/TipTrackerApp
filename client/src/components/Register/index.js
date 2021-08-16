@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import footer from '../Footer/index';
+// REGISTER PAGE
 
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import footer from "../Footer/index";
 
-import AuthService from '../../utils/auth';
-import { ADD_ACCOUNT } from '../../utils/mutations';
+import { useMutation } from "@apollo/client";
+
+import AuthService from "../../utils/auth";
+import { ADD_ACCOUNT } from "../../utils/mutations";
 import "./index.css";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
   const [addAccount, { error, data }] = useMutation(ADD_ACCOUNT);
 
@@ -39,7 +41,7 @@ const Signup = () => {
   };
 
   return (
-    <div className='main-container'>
+    <div className="main-container">
       <div className="welcome-card">
         <div className="welcome">
           <h2>Welcome To MooLah</h2>
@@ -48,40 +50,48 @@ const Signup = () => {
         <main className="register-card">
           {data ? (
             <p>
-              Success! You may now head{' '}
+              Success! You may now head{" "}
               <Link to="/mytips">back to the homepage.</Link>
             </p>
           ) : (
             <div>
               <form onSubmit={handleFormSubmit}>
                 <div className="email">
-                  <input placeholder='Username'
+                  <input
+                    placeholder="Username"
                     name="username"
                     type="text"
                     value={formState.name}
                     onChange={handleChange}
                   ></input>
-                  <i className='fas fa-user-alt email-icon' aria-hidden='true'></i>
+                  <i
+                    className="fas fa-user-alt email-icon"
+                    aria-hidden="true"
+                  ></i>
                 </div>
 
                 <div className="password">
-                  <input placeholder='Password'
+                  <input
+                    placeholder="Password"
                     name="password"
                     type="password"
                     value={formState.password}
                     onChange={handleChange}
                   ></input>
-                  <i className="fas fa-lock password-icon" aria-hidden='true'></i>
+                  <i
+                    className="fas fa-lock password-icon"
+                    aria-hidden="true"
+                  ></i>
                 </div>
 
-                <button type='submit' className='submit-btn'>
+                <button type="submit" className="submit-btn">
                   Register
                 </button>
               </form>
               <div className="register">
                 <p>
                   Already have an account?
-                  <Link to='/'>Log in!</Link>
+                  <Link to="/">Log in!</Link>
                 </p>
               </div>
               {error && (
@@ -89,12 +99,13 @@ const Signup = () => {
                   {error.message}
                 </div>
               )}
-            </div>)}
+            </div>
+          )}
         </main>
       </div>
       {footer}
     </div>
   );
-}
+};
 
 export default Signup;

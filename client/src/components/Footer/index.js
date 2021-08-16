@@ -1,9 +1,4 @@
-import './index.css';
+import "./index.css";
 
-const footer = 
-    <footer className="footer">
-        © MooLah
-    </footer>
-;
-
-export default footer
+const footer = <footer className="footer">© MooLah</footer>;
+export default footer;
