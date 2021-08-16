@@ -12,6 +12,8 @@ import Button from '@material-ui/core/Button';
 import AuthService from "../../utils/auth";
 import decode from 'jwt-decode';
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { REMOVE_ACCOUNT } from "../../utils/mutations";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,16 +42,23 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Settings = () => {
+  const decoded = decode(localStorage.getItem('id_token'))
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
+  const [removeAccount] = useMutation(REMOVE_ACCOUNT, {
+    variables: {
+      _id: decoded.data._id
+    }
+  })
 
-  // const [darkMode, setDarkMode] = useState(false);
-  // const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
-
-//   const [theme, themeSwitch] = React.useState(false);
-  
-//   const switchTheme = (e, value) => {
-//     themeSwitch(!theme)
-//     console.log(theme)
-// }
+const deleteAccount = () => {
+  try{
+    removeAccount()
+  } catch(err){
+    console.error(err);
+  }
+  window.location.assign('/')
+}
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -57,8 +66,6 @@ const Settings = () => {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-
-  const decoded = decode(localStorage.getItem('id_token'))
 
   return (
     <div className={classes.root}>
@@ -96,7 +103,9 @@ const Settings = () => {
         >
           <Typography className={classes.heading}>Your Account</Typography>
           <Typography className={classes.secondaryHeading}>
-          {decoded.data.username}
+          {decoded.data.username} <Button onClick={() => {deleteAccount()}} variant="contained" color="secondary">
+              Delete Account
+            </Button>
           </Typography>
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
@@ -227,16 +236,5 @@ const Settings = () => {
     </div>
   );
 };
-
-// const Settings = () => {
-//     return (
-//         <div className='settings'>
-//             <h2>Settings</h2>
-//             { navBar }
-//         </div>
-
-//     )
-
-// }
 
 export default Settings;
