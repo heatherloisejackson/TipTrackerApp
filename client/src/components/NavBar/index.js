@@ -78,7 +78,7 @@ const NavBar = () => {
         to={"Graph"}
       />
 
-      <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+      <Fab color="secondary" aria-label="add" className={classes.fabButton} href={"MyTips"}>
         <AddIcon />
       </Fab>
 
