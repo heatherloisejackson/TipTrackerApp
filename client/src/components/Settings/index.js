@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Settings = () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c756897592dd7ace7b4229d71a9464c5a89752e5
   const decoded = decode(localStorage.getItem('id_token'))
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
@@ -51,11 +54,14 @@ const Settings = () => {
       _id: decoded.data._id
     }
   })
+<<<<<<< HEAD
 =======
 
   // const [darkMode, setDarkMode] = useState(false);
   // const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
 >>>>>>> 37775ed5dacf5950a3fed945b0ed587ecb9e7984
+=======
+>>>>>>> c756897592dd7ace7b4229d71a9464c5a89752e5
 
 const deleteAccount = () => {
   try{
