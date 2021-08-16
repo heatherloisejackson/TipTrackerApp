@@ -1,5 +1,55 @@
+html {
+  height: 100vh;
+  background-image: url(./moolah-background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .MuiAccordionDetails-root {
   padding: 8px 16px 16px 33.3%;
+}
+
+#root p{
+  font-family: "Fredoka One";
+
+}
+
+
+.MuiButton-contained span {
+  width: 10vw;
+}
+
+.MuiTypography-body1 button {
+  font-family: "Fredoka One";
+  background-color: #EDB88B;
+  color: white;
+}
+.MuiTypography-body1 button:hover {
+  background-color: #EDB88B;
+}
+
+.MuiAccordionSummary-content button {
+  font-family: "Fredoka One";
+  background-color: #EDB88B;
+/*   width: 10vw;
+ */}
+
+.MuiButton-containedSecondary:hover {
+  background-color: black; 
+}
+
+a {
+  text-decoration: none;
+  color: #EDB88B;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.MuiButton-containedSecondary {
+  color: #fff;
+  background-color: black;
 }
 
 /* DESKTOPS */
@@ -14,7 +64,6 @@
 
 @media screen and (max-width: 1200px) {
   .settings {
-    color: blue;
   }
 }
 
@@ -22,7 +71,6 @@
 
 @media screen and (max-width: 600px) {
   .settings {
-    color: orange;
   }
 }
 
@@ -30,9 +78,18 @@
 
 @media screen and (max-width: 465px) {
   .settings {
-    color: green;
+  }
+  .MuiTypography-body1 button {
+    width: 40vw;
+    color: white;
+  }
+  
+  .MuiAccordionSummary-content button {
+
+    width: 40vw;
   }
 }
+
 
 [data-theme="dark"] {
   --bg-color: #3f3f3f;

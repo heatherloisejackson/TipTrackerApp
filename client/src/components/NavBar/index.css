@@ -8,14 +8,36 @@ nav a:hover {
   text-decoration: none;
 }
 
-.Mui-selected {
+.MuiBottomNavigationAction-wrapper span:hover{
   color: #2e282a;
 }
 
-a:hover {
+.MuiBottomNavigationAction-label Mui-selected {
   color: #2e282a;
 }
 
+
+a .MuiBottomNavigationAction-root.Mui-selected:hover {
+  color: #2e282a;
+  padding-top: 6px;
+}
+
+/* changes all links except news on hover */
+a span:hover {
+  color: #2e282a;
+}
+
+.MuiBottomNavigationAction-wrapper:hover {
+  color:#2e282a;
+}
+
+span .Mui-selected {
+  color: white;
+}
+
+.Mui-selected:hover {
+  color: black;
+}
 .MuiFab-secondary:hover {
   background-color: #cd5334;
 }
