@@ -32,7 +32,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![Application Demo](client/public/tip-tracker-app.gif)
 
 # __Screenshots__
-
+![signin-ss](https://user-images.githubusercontent.com/56444674/129632457-09a273c6-b280-4a9d-b260-ec332b975fcf.png)
+![register-ss](https://user-images.githubusercontent.com/56444674/129632460-c9a46af7-5b5d-4af8-90e8-881398977118.png)
+![calendar-ss](https://user-images.githubusercontent.com/56444674/129632449-fbc8f3b8-a898-46b4-9998-51169f0d19c9.png)
+![graph-ss](https://user-images.githubusercontent.com/56444674/129632453-cf0ec683-08c5-42a0-be51-a317dcfe0201.png)
+![news-ss](https://user-images.githubusercontent.com/56444674/129632456-ba9452bb-a387-468f-bbe5-ea25847bf0ab.png)
+![settings-ss](https://user-images.githubusercontent.com/56444674/129632452-5f0fa370-4049-49d4-983a-d3ca57742f02.png)
 ## __Contributors__
 * Alex Bradshaw
 * Mike DiSanto
