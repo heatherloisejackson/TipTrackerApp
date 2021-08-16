@@ -50,7 +50,7 @@ const TipUD = (props) => {
     } catch(err){
       console.error(err);
     }
-    window.location.reload()
+    window.location.assign('/')
   }
 
   return (

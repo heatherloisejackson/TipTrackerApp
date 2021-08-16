@@ -52,3 +52,11 @@ mutation removeTransaction($_id: ID!){
   }
 }
 `
+
+export const REMOVE_ACCOUNT = gql`
+mutation removeAccount($_id: ID!){
+  removeAccount(_id: $_id){
+    _id
+  }
+}
+`
