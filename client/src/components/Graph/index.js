@@ -34,7 +34,7 @@ const Graph = (props) => {
       obj = [];
       let arraySort = [...data.account.transactions];
       const sortedActivities = arraySort.sort((a, b) =>
-        a.date.localeCompare(b.date)
+        b.date - a.date
       );
       obj.push(["date", "amount"]);
       for (let i = 0; i < sortedActivities.length; i++) {
