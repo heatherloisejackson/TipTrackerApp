@@ -5,6 +5,15 @@
     border-color: #6c757d;
 }
 
+.tip-submit-btn:active,
+.tip-submit-btn:focus,
+.tip-submit-btn:hover {
+    color: #fff;
+    background-color: #60935D;
+    border-color:#6c757d;
+    box-shadow: 1px 1px 5px #6c757d;
+}
+
 .tip-entry {
     width: 20vw;
 }

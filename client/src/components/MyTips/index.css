@@ -28,7 +28,7 @@ html {
 
 .react-calendar__month-view__weekdays__weekday {
     font-family: 'Fredoka One', cursive;
-    font-size: 2.5vh;
+    font-size: 2vh;
     letter-spacing: .1vw;
 }
 
@@ -47,7 +47,7 @@ html {
 .react-calendar__month-view__days {
     font-family: 'Fredoka One', cursive;
     font-weight: 200;
-    font-size: 2.5vh;
+    font-size: 2vh;
     height: 70vh;
 }
 

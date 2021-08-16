@@ -129,10 +129,10 @@ const deleteAccount = () => {
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           <Typography>
-            <div className="theme" data-theme={darkMode? "dark" : "light"}>
+            {/* <div className="theme" data-theme={darkMode? "dark" : "light"}>
               <button onClick={toggleDarkMode}>Toggle Dark Mode
               </button>
-            </div>
+            </div> */}
             
           
       

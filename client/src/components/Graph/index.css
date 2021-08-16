@@ -1,6 +1,25 @@
 /* DESKTOPS */
 
-circle:nth-child(odd) {
+
+/* rect:nth-child(odd) {
+    fill: #CD5334 ;
+} */
+
+/* rect[Attributes Style] {
+    x: 348;
+    y: 550;
+    width: 427;
+    height: 98;
+    stroke: none;
+   stroke-width: 0;
+  fill: rgb(51, 102, 204);
+} */
+
+/* rect:nth-child(even) {
+    fill: #EDB88B ;
+} */
+
+/* circle:nth-child(odd) {
     fill: red;
     r: 7.5;
 }
@@ -9,12 +28,12 @@ circle:nth-child(odd) {
 circle:nth-child(even) {
     fill: blue;
     r: 7.5;
-}
+} */
 
 /* bar */
-path {
+/* path {
     d:  50;
-}
+} */
 
 
 /* rect {
